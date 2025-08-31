@@ -32,7 +32,8 @@ module.exports = {
   			},
   			white: '#ffffff',
   			accent: {
-  				DEFAULT: '#FFCC00',
+  				// DEFAULT: '#FFCC00',
+				DEFAULT: '#006CFF',
   				hover: '#e5e5e5',
   				foreground: 'hsl(var(--accent-foreground))'
   			},

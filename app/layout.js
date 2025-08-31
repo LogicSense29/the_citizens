@@ -12,7 +12,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata = {
   title: "The Citizens",
-  description: "GThe Citizens Church",
+  description: "The Citizens Church",
 };
 
 export default function RootLayout({ children }) {
