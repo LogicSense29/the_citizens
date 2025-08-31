@@ -20,11 +20,11 @@ export default function Home() {
       >
         {/* Hero Content */}
         <div className="container mx-auto min-h-screen relative z-20 flex flex-col items-center justify-center w-full pt-[180px] pb-8 px-4 sm:px-6">
-          <h4 className="text-black font-bold text-2xl sm:text-3xl mb-3 leading-none text-center">
+          <h4 className="text-black font-bold text-2xl sm:text-xl mb-3 leading-none text-center">
             Welcome to The Citizen's Place Church
           </h4>
-          <h1 className="leading-none text-4xl sm:text-6xl md:text-8xl text-white font-semibold mb-4 text-center max-w-4xl">
-            You're Not Just a Visitor - You're a Citizen
+          <h1 className="leading-none text-4xl sm:text-6xl md:text-[40px] text-white font-semibold mb-4 text-center max-w-4xl">
+            You're Not Just a <br/>Visitor - You're a Citizen
           </h1>
           <p className="text-base sm:text-lg text-white mb-6 text-center max-w-2xl">
             At The Citizen’s Place, we believe that each encounter is more than
