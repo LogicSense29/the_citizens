@@ -1,12 +1,10 @@
 "use client";
-import React from "react";
 
 export default function Footer() {
   return (
     <footer className="bg-[#1A1A1A] text-white py-8">
-      <div className="container mx-auto px-4 flex flex-col justify-between items-start gap-8">
-        <div className="w-full flex justify-between">
-          {" "}
+      <div className="container mx-auto px-4 flex flex-col gap-8">
+        <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
           {/* Navigation Section */}
           <div className="flex flex-col space-y-4">
             <a href="#" className="hover:text-gray-300">
@@ -29,24 +27,23 @@ export default function Footer() {
             </a>
           </div>
           {/* Newsletter Section */}
-          <div className="flex flex-col space-y-4">
+          <div className="flex flex-col space-y-4 w-full md:w-auto">
             <h3 className="text-lg font-semibold">Join our newsletter</h3>
             <p className="text-gray-400">Stay connected and informed:</p>
-            <div className="flex space-x-2">
+            <div className="flex flex-col sm:flex-row gap-2 w-full">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="px-4 py-2 rounded-lg bg-white text-black w-full md:w-64"
+                className="px-4 py-2 rounded-lg bg-white text-black w-full sm:w-64"
               />
-              <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+              <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 w-full sm:w-auto">
                 Sign me up
               </button>
             </div>
           </div>
         </div>
-
-        {/* Social Media Section (placeholder icons) */}
-        <div className="flex space-x-4 justify-end">
+        {/* Social Media Section */}
+        <div className="flex flex-wrap justify-center md:justify-end gap-4">
           <a href="#" className="text-gray-400 hover:text-white">
             <span className="sr-only">Twitter</span>
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
