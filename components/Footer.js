@@ -4,49 +4,49 @@ import React from "react";
 export default function Footer() {
   return (
     <footer className="bg-[#1A1A1A] text-white py-8">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-start gap-8">
-        {/* Navigation Section */}
-        <div className="flex flex-col space-y-4">
-          <a href="#" className="hover:text-gray-300">
-            About
-          </a>
-          <a href="#" className="hover:text-gray-300">
-            Worship
-          </a>
-          <a href="#" className="hover:text-gray-300">
-            Messages
-          </a>
-          <a href="#" className="hover:text-gray-300">
-            I'm new
-          </a>
-          <a href="#" className="hover:text-gray-300">
-            Give
-          </a>
-          <a href="#" className="hover:text-gray-300">
-            Contact us
-          </a>
-        </div>
-
-        {/* Newsletter Section */}
-        <div className="flex flex-col space-y-4">
-          <h3 className="text-lg font-semibold">Join our newsletter</h3>
-          <p className="text-gray-400">Stay connected and informed:</p>
-          <div className="flex space-x-2">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="px-4 py-2 rounded-lg bg-white text-black w-full md:w-64"
-            />
-            <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
-              Sign me up
-            </button>
+      <div className="container mx-auto px-4 flex flex-col justify-between items-start gap-8">
+        <div className="w-full flex justify-between">
+          {" "}
+          {/* Navigation Section */}
+          <div className="flex flex-col space-y-4">
+            <a href="#" className="hover:text-gray-300">
+              About
+            </a>
+            <a href="#" className="hover:text-gray-300">
+              Worship
+            </a>
+            <a href="#" className="hover:text-gray-300">
+              Messages
+            </a>
+            <a href="#" className="hover:text-gray-300">
+              I'm new
+            </a>
+            <a href="#" className="hover:text-gray-300">
+              Give
+            </a>
+            <a href="#" className="hover:text-gray-300">
+              Contact us
+            </a>
+          </div>
+          {/* Newsletter Section */}
+          <div className="flex flex-col space-y-4">
+            <h3 className="text-lg font-semibold">Join our newsletter</h3>
+            <p className="text-gray-400">Stay connected and informed:</p>
+            <div className="flex space-x-2">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="px-4 py-2 rounded-lg bg-white text-black w-full md:w-64"
+              />
+              <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                Sign me up
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Horizontal Line */}
-        <div className="border-t border-gray-600 my-8 mx-4"></div>
         {/* Social Media Section (placeholder icons) */}
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 justify-end">
           <a href="#" className="text-gray-400 hover:text-white">
             <span className="sr-only">Twitter</span>
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
