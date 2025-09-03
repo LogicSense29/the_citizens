@@ -313,11 +313,11 @@ export default function Home() {
       {/* About Founder Section */}
 
       <div className="bg-[#eaf3ff]">
-        <div className="container w-full h-auto py-6 sm:py-8 md:py-12 pb-8 px-2 sm:px-4">
+        <div className="container w-full h-auto py-8 sm:py-8 md:py-12 pb-8 px-2 sm:px-4 flex justify-center items-center">
           <Image
             src="/img-founder.png"
             alt="About Founder"
-            className="mb-4 w-full h-auto rounded-lg"
+            className="mb-4 w-fit h-auto rounded-lg p-12"
             width={1200}
             height={400}
           />
