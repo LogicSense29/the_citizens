@@ -46,7 +46,7 @@ export default function Home() {
       {/* Other Sections */}
       <div className='bg-[#0A0D11] py-12 sm:py-20 min-h-[400px] h-auto relative'>
         <div className=''>
-          <div className="absolute top-[-30px] sm:top-[-50px] w-full max-w-2xl sm:max-w-3xl left-0 sm:left-1/2 translate-x-0 sm:-translate-x-1/2 flex flex-col justify-center text-center items-center bg-[url('/top-qoute-text.svg')] bg-no-repeat bg-cover bg-center">
+          <div className="absolute top-[-40px] sm:top-[-50px] w-full max-w-2xl sm:max-w-3xl left-0 sm:left-1/2 translate-x-0 sm:-translate-x-1/2 flex flex-col justify-center text-center items-center bg-[url('/top-qoute-text.svg')] bg-no-repeat bg-cover bg-center">
             {/* <div className='absolute bg-black rounded-[61px] top-[-50px] w-full max-w-2xl sm:max-w-3xl left-1/2 -translate-x-1/2 flex flex-col p-6 sm:p-20 justify-center text-center items-center'></div> */}
             {/* <div className='absolute -top-[0px] left-[20px] sm:left-[50px] w-[80px] sm:w-[120px] h-[60px] sm:h-[100px] bg-black rounded-b-full'></div>
           <div className='absolute -top-[0px] left-[80px] sm:left-[120px] w-[80px] sm:w-[120px] h-[60px] sm:h-[100px] bg-white rounded-l-full'></div>
