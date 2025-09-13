@@ -75,3 +75,11 @@
     --chart-5: 340 75% 55%;
   }
 }
+
+@media (max-width: 640px) {
+  /* Styles apply only between 768px and 1024px */
+  .om-con {
+    margin-top: 30%;
+  }
+}
+
