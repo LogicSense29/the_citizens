@@ -351,14 +351,14 @@ export default function Home() {
               <Image
                 src='/pastorandwife.png'
                 alt='About Founder'
-                className='mb-4 h-auto w-[90%] rounded-lg object-cover'
+                className='mb-4 h-auto w-full sm:w-[90%] rounded-lg object-cover'
                 width={400}
                 height={400}
               />
             </div>
             <div className='flex flex-col text-black flex-1 space-y-8 self-center'>
-              <h2 className='text-base sm:text-xl font-semibold mb-2 text-gray-700'>
-                Yinka and Nike Oladeru
+              <h2 className='text-base sm:text-xl font-semibold text-gray-700'>
+                YINKA AND NIKE OLADERU
               </h2>
               <p className='text-base sm:text-xl text-gray-700 text-justify'>
                 Yinka and Nike Oladeru are passionate lover of God whose sole
@@ -375,7 +375,7 @@ export default function Home() {
                 themes.
               </p>
 
-              <div className='flex flex-col md:flex-row gap-8 md:gap-16'>
+              <div className='flex flex-col md:flex-row gap-4 md:gap-16'>
                 <button className='w-full sm:w-auto px-6 py-4 sm:py-5 bg-[#006CFF] flex items-center justify-center gap-2 rounded'>
                   <p className='text-base sm:text-xl text-white'>Read More</p>
                 </button>
