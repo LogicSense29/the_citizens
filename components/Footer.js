@@ -1,4 +1,6 @@
 "use client";
+import Image from "next/image";
+import Link from "next/link";
 import { FaAngleRight, FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 
@@ -7,7 +9,7 @@ export default function Footer() {
   const year = date.getFullYear()
   return (
     <footer className='bg-[#1A1A1A] text-white py-8'>
-      <div className='container mx-auto px-4 flex flex-col gap-8'>
+      <div className='px-4 md:px-12 mx-auto px-4 flex flex-col gap-8'>
         <div className='w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-8'>
           {/* Navigation Section */}
           <div className='flex flex-col space-y-4'>
@@ -48,8 +50,22 @@ export default function Footer() {
               <FaAngleRight className='' />
             </a>
           </div>
+
+          <div className='flex flex-col space-y-2 w-full md:w-auto'>
+            <Link href={"/"}>
+              <Image
+                src='/logo.png'
+                className='w-[180px] h-auto'
+                alt='Logo'
+                width={100}
+                height={100}
+              />
+            </Link>
+            <h3>A Place Like Home</h3>
+            <p>No 7 Farayola street, Bodija, Ibadan.</p>
+          </div>
           {/* Newsletter Section */}
-          <div className='flex flex-col space-y-4 w-full md:w-auto'>
+          <div className='flex flex-col space-y-2 w-full md:w-auto'>
             <h3 className='text-lg font-semibold'>Join our newsletter</h3>
             <p className='text-gray-400'>Stay connected and informed:</p>
             <div className='flex flex-col sm:flex-row gap-2 w-full'>

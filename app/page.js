@@ -342,14 +342,51 @@ export default function Home() {
       {/* About Founder Section */}
 
       <div className='bg-[#eaf3ff]'>
-        <div className='container w-full h-auto py-8 sm:py-8 md:py-12 pb-8 px-2 sm:px-4 flex justify-center items-center'>
-          <Image
-            src='/img-founder.png'
-            alt='About Founder'
-            className='mb-4 w-fit h-auto rounded-lg p-12'
-            width={1200}
-            height={400}
-          />
+        <div className='container w-full h-auto py-8 sm:py-8 md:py-12 pb-8 px-2 sm:px-4'>
+          <h2 className='text-black text-xl sm:text-2xl md:text-4xl font-bold text-start mb-4 sm:mb-6'>
+            Meet Our Pastor
+          </h2>
+          <div className='flex flex-col md:flex-row'>
+            <div className='flex-1'>
+              <Image
+                src='/pastorandwife.png'
+                alt='About Founder'
+                className='mb-4 h-auto w-[90%] rounded-lg object-cover'
+                width={400}
+                height={400}
+              />
+            </div>
+            <div className='flex flex-col text-black flex-1 space-y-8 self-center'>
+              <h2 className='text-base sm:text-xl font-semibold mb-2 text-gray-700'>
+                Pastor
+              </h2>
+              <p className='text-base sm:text-xl text-gray-700 text-justify'>
+                Pastor is a young and passionate lover of God whose sole drive
+                is to see a generation of young people consumed with hunger for
+                more of Jesus. He consistently desires and pursues a deeper walk
+                with the Holy Spirit, which is the inspiration for his
+                relentless drive to invest time in communion and prayer.
+              </p>
+
+              <p className='text-base sm:text-xl text-gray-700 text-justify'>
+                Pastor has been used by God to bless the body of Christ with
+                many songs among which love for God, desire for greater light,
+                and revelation of the ways of God are consistent themes.
+              </p>
+
+              <div className='flex flex-col md:flex-row gap-8 md:gap-16'>
+                <button className='w-full sm:w-auto px-6 py-4 sm:py-5 bg-[#006CFF] flex items-center justify-center gap-2 rounded'>
+                  <p className='text-base sm:text-xl text-white'>Read More</p>
+                </button>
+
+                <button className='w-full sm:w-auto px-6 py-4 sm:py-5 bg-black flex items-center justify-center gap-2 rounded'>
+                  <p className='text-base sm:text-xl text-white'>
+                    Quote by Pastor
+                  </p>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

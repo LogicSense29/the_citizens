@@ -46,7 +46,7 @@ export default function MobileNav() {
               <Link
                 href={link.href}
                 className={cn(
-                  "transition-colors hover:text-zinc-900 dark:hover:text-zinc-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black dark:focus-visible:ring-white rounded",
+                  "transition-colors hover:text-zinc-900 dark:hover:text-zinc-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black dark:focus-visible:ring-white rounded w-full",
                   pathname === link.href
                     ? "text-white"
                     : "text-zinc-600 dark:text-zinc-400"

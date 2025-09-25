@@ -75,8 +75,8 @@ export default function WorshipPageContent() {
           </div>
         </div>
         {/* Weekly Service Section */}
-        <div className='container w-full h-auto py-8 sm:py-12 mb-8 px-4 '>
-          <div className='flex flex-col md:flex-row w-full justify-between items-start gap-8'>
+        <div className='container w-full h-auto py-8 sm:py-12 md:mb-8 px-4 '>
+          <div className='flex flex-col md:flex-row w-full justify-between items-start gap-8 md:gap-0'>
             {/* Text on the left */}
             <div className='md:w-2/5 w-full flex flex-col justify-start items-start'>
               <h2 className='text-[#006CFF] text-2xl sm:text-4xl md:text-6xl font-bold text-start mb-4 sm:mb-6 max-w-3xl'>
@@ -104,14 +104,14 @@ export default function WorshipPageContent() {
           </div>
         </div>
         {/* Vigil Service Section */}
-        <div className='container w-full h-auto py-8 sm:py-12 mb-8 px-4  '>
-          <div className='flex flex-col md:flex-row w-full justify-between items-start gap-8'>
+        <div className='container w-full h-auto py-8 sm:py-12 mb-8 px-4'>
+          <div className='flex flex-col-reverse md:flex-row w-full justify-between items-start gap-8'>
             {/* Image on the left */}
             <div className='md:w-3/5 w-full flex justify-center items-center'>
               <Image
                 src='/worship-sec4-img.png'
                 alt='Weekly Service'
-                className='mb-4 w-full h-auto rounded-lg'
+                className='mb-4 w-full h-auto rounded-lg object-fill'
                 width={800}
                 height={400}
               />
