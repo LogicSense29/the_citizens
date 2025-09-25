@@ -358,20 +358,21 @@ export default function Home() {
             </div>
             <div className='flex flex-col text-black flex-1 space-y-8 self-center'>
               <h2 className='text-base sm:text-xl font-semibold mb-2 text-gray-700'>
-                Pastor
+                Yinka and Nike Oladeru
               </h2>
               <p className='text-base sm:text-xl text-gray-700 text-justify'>
-                Pastor is a young and passionate lover of God whose sole drive
-                is to see a generation of young people consumed with hunger for
-                more of Jesus. He consistently desires and pursues a deeper walk
-                with the Holy Spirit, which is the inspiration for his
-                relentless drive to invest time in communion and prayer.
+                Yinka and Nike Oladeru are passionate lover of God whose sole
+                drive is to see a generation of young people consumed with
+                hunger for more of Jesus. He consistently desires and pursues a
+                deeper walk with the Holy Spirit, which is the inspiration for
+                his relentless drive to invest time in communion and prayer.
               </p>
 
               <p className='text-base sm:text-xl text-gray-700 text-justify'>
-                Pastor has been used by God to bless the body of Christ with
-                many songs among which love for God, desire for greater light,
-                and revelation of the ways of God are consistent themes.
+                Nike Oladeru has been used by God to bless the body of
+                Christ with many songs among which love for God, desire for
+                greater light, and revelation of the ways of God are consistent
+                themes.
               </p>
 
               <div className='flex flex-col md:flex-row gap-8 md:gap-16'>
