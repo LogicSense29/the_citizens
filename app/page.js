@@ -188,7 +188,7 @@ export default function Home() {
                 />
                 <div className='absolute inset-0 flex items-center justify-center'>
                   <a
-                    href='https://www.youtube.com'
+                    href='https://youtu.be/1XAYhwN4GKY?si=LqIee70_pF9zKsQ8www.youtube.com'
                     target='_blank'
                     rel='noopener noreferrer'>
                     <Image
@@ -202,13 +202,13 @@ export default function Home() {
                 </div>
               </div>
               <h3 className='text-base sm:text-lg md:text-xl font-semibold mb-2 text-gray-700'>
-                CULTIVATING OWNERSHIP MENTALITY
+                THE MINDSET OF FAITH
               </h3>
               <p className='text-gray-700 text-sm sm:text-base md:text-lg'>
                 Kindly subscribe to our YouTube channel.
               </p>
               <p className='text-gray-500 text-xs sm:text-sm md:text-base'>
-                18th January 2025
+                21th September 2025
               </p>
             </div>
             {/* 2nd card  */}
@@ -223,7 +223,7 @@ export default function Home() {
                 />
                 <div className='absolute inset-0 flex items-center justify-center'>
                   <a
-                    href='https://www.youtube.com'
+                    href='https://youtu.be/_Ym0IZQxxE0?si=PNCooU4OJWF9RCae'
                     target='_blank'
                     rel='noopener noreferrer'>
                     <Image
@@ -237,13 +237,13 @@ export default function Home() {
                 </div>
               </div>
               <h3 className='text-base sm:text-lg md:text-xl font-semibold mb-2 text-gray-700'>
-                CULTIVATING OWNERSHIP MENTALITY
+                THEATHERS OF WAR
               </h3>
               <p className='text-gray-700 text-sm sm:text-base md:text-lg'>
                 Kindly subscribe to our YouTube channel.
               </p>
               <p className='text-gray-500 text-xs sm:text-sm md:text-base'>
-                18th January 2025
+                21th September 2025
               </p>
             </div>
             {/* 3rd card  */}
@@ -369,10 +369,9 @@ export default function Home() {
               </p>
 
               <p className='text-base sm:text-xl text-gray-700 text-justify'>
-                Nike Oladeru has been used by God to bless the body of
-                Christ with many songs among which love for God, desire for
-                greater light, and revelation of the ways of God are consistent
-                themes.
+                Nike Oladeru has been used by God to bless the body of Christ
+                with many songs among which love for God, desire for greater
+                light, and revelation of the ways of God are consistent themes.
               </p>
 
               <div className='flex flex-col md:flex-row gap-4 md:gap-16'>
