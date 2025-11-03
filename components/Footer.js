@@ -10,9 +10,9 @@ export default function Footer() {
   return (
     <footer className='bg-[#1A1A1A] text-white py-8'>
       <div className='px-4 md:px-12 mx-auto px-4 flex flex-col gap-8'>
-        <div className='w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-8'>
+        <div className='w-full flex flex-col md:flex-row justify-between items-center gap-8'>
           {/* Navigation Section */}
-          <div className='flex flex-col space-y-4'>
+          <div className='flex flex-col space-y-4 w-full md:w-1/4'>
             <a
               href='#'
               className='hover:text-gray-300 flex items-center justify-between'>
@@ -51,7 +51,7 @@ export default function Footer() {
             </a>
           </div>
 
-          <div className='flex flex-col space-y-2 w-full md:w-auto'>
+          <div className='flex flex-col items-center md:items-start space-y-2 w-full md:w-auto'>
             <Link href={"/"}>
               <Image
                 src='/logo.png'
@@ -65,10 +65,10 @@ export default function Footer() {
             <p>No 7 Farayola street, Bodija, Ibadan.</p>
           </div>
           {/* Newsletter Section */}
-          <div className='flex flex-col space-y-2 w-full md:w-auto'>
+          <div className='flex flex-col items-center md:items-start space-y-2 w-full md:w-auto'>
             <h3 className='text-lg font-semibold'>Join our newsletter</h3>
             <p className='text-gray-400'>Stay connected and informed:</p>
-            <div className='flex flex-col sm:flex-row gap-2 w-full'>
+            <div className='flex flex-col lg:flex-row sm:justify-center gap-2 w-full'>
               <input
                 type='email'
                 placeholder='Enter your email'

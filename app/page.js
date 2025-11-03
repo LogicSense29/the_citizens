@@ -175,9 +175,10 @@ export default function Home() {
           <h2 className='text-black text-xl sm:text-2xl md:text-4xl font-bold text-start mb-4 sm:mb-6'>
             Our Messages
           </h2>
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-between'>
             {/* Message Cards */}
-            <div className='bg-[#eaf3ff] rounded-lg p-3 sm:p-4 md:p-6 m-1 sm:m-2 md:m-4'>
+            {/* p-3 sm:p-4 md:p-6 m-1 sm:m-2 md:m-4 */}
+            <div className='bg-[#eaf3ff] rounded-lg '>
               <div className='relative'>
                 <Image
                   src='/messages-img.png'
@@ -212,7 +213,7 @@ export default function Home() {
               </p>
             </div>
             {/* 2nd card  */}
-            <div className='bg-[#eaf3ff] rounded-lg p-3 sm:p-4 md:p-6 m-1 sm:m-2 md:m-4'>
+            <div className='bg-[#eaf3ff] rounded-lg'>
               <div className='relative'>
                 <Image
                   src='/messages-img.png'
@@ -247,7 +248,7 @@ export default function Home() {
               </p>
             </div>
             {/* 3rd card  */}
-            <div className='bg-[#eaf3ff] rounded-lg p-3 sm:p-4 md:p-6 m-1 sm:m-2 md:m-4'>
+            <div className='bg-[#eaf3ff] rounded-lg'>
               <div className='relative'>
                 <Image
                   src='/messages-img.png'
@@ -343,11 +344,11 @@ export default function Home() {
 
       <div className='bg-[#eaf3ff]'>
         <div className='container w-full h-auto py-8 sm:py-8 md:py-12 pb-8 px-2 sm:px-4'>
-          <h2 className='text-black text-xl sm:text-2xl md:text-4xl font-bold text-start mb-4 sm:mb-6'>
+          <h2 className='text-black text-xl sm:text-2xl md:text-4xl font-bold text-center mb-4 sm:mb-6'>
             Meet Our Pastor
           </h2>
-          <div className='flex flex-col md:flex-row'>
-            <div className='flex-1'>
+          <div className='flex flex-col lg:flex-row items-center'>
+            <div className='flex justify-center'>
               <Image
                 src='/pastorandwife.png'
                 alt='About Founder'
@@ -356,8 +357,8 @@ export default function Home() {
                 height={400}
               />
             </div>
-            <div className='flex flex-col text-black flex-1 space-y-8 self-center'>
-              <h2 className='text-base sm:text-xl font-semibold text-gray-700'>
+            <div className='flex flex-col text-black flex-1 space-y-8'>
+              <h2 className='text-base sm:text-xl font-semibold text-gray-700 text-center lg:text-start'>
                 YINKA AND NIKE OLADERU
               </h2>
               <p className='text-base sm:text-xl text-gray-700 text-justify'>
@@ -374,7 +375,7 @@ export default function Home() {
                 light, and revelation of the ways of God are consistent themes.
               </p>
 
-              <div className='flex flex-col md:flex-row gap-4 md:gap-16'>
+              <div className='flex flex-col md:flex-row gap-4 md:gap-16 justify-center md:justify-start'>
                 <button className='w-full sm:w-auto px-6 py-4 sm:py-5 bg-[#006CFF] flex items-center justify-center gap-2 rounded'>
                   <p className='text-base sm:text-xl text-white'>Read More</p>
                 </button>
@@ -385,6 +386,49 @@ export default function Home() {
                   </p>
                 </button>
               </div>
+            </div>
+          </div>
+
+          {/* Preview of Pastors */}
+          <div className='flex flex-col md:flex-row justify-around mt-20 gap-6'>
+            {/* Main Pastor */}
+            <div className='flex flex-col items-center'>
+              <div className='w-100 h-100 mb-4'>
+                <Image
+                  src='/pastorandwife.png'
+                  alt='About Founder'
+                  className='rounded-lg object-cover'
+                  width={300}
+                  height={300}
+                />
+              </div>
+              <h2 className='text-base sm:text-xl font-semibold text-gray-700 text-center'>
+                Yinka and Nike Oladeru
+              </h2>
+              <a className='text-base sm:text-xl font-semibold text-[#006CFF]'>
+                Read Biography
+                <div className='h-[2px] bg-[#006CFF] rounded-full' />
+              </a>
+            </div>
+            {/* Pastor Mayowa */}
+            <div className='flex flex-col items-center'>
+              <div className='w-100 h-100 mb-4'>
+                <Image
+                  src='/pastorandwife.png'
+                  alt='Pastor Mayowa of Citizen Place'
+                  className='rounded-lg object-cover'
+                  width={300}
+                  height={300}
+                />
+              </div>
+              <h2 className='text-base sm:text-xl font-semibold text-gray-700 text-center'>
+                Pastor Mayowa
+              </h2>
+
+              <a className='text-base sm:text-xl font-semibold text-[#006CFF]'>
+                Read Biography
+                <div className='h-[2px] bg-[#006CFF] rounded-full' />
+              </a>
             </div>
           </div>
         </div>
