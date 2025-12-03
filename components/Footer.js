@@ -11,8 +11,28 @@ export default function Footer() {
     <footer className='bg-[#1A1A1A] text-white py-8'>
       <div className='px-4 md:px-12 mx-auto px-4 flex flex-col gap-8'>
         <div className='w-full flex flex-col md:flex-row justify-between items-center gap-8'>
+
+        {/* About Church */}
+          <div className='flex flex-col flex-1 items-center md:items-start space-y-2 w-full md:w-auto'>
+            <Link href={"/"}>
+              <Image
+                src='/logo.png'
+                className='w-[180px] h-auto'
+                alt='Logo'
+                width={100}
+                height={100}
+              />
+            </Link>
+            <p className=''>
+              Whether you are dealing with challenges, have prayer requests,
+              need guidance, or just want to connect, we are here and eager to
+              help with it.
+            </p>
+            <h3 className="font-semibold">No 7 Farayola street, Bodija, Ibadan.</h3>
+          </div>
+        
           {/* Navigation Section */}
-          <div className='flex flex-col space-y-4 w-full md:w-1/4'>
+          <div className='flex flex-col flex-1 space-y-4 w-full md:w-1/4'>
             <a
               href='#'
               className='hover:text-gray-300 flex items-center justify-between'>
@@ -51,21 +71,8 @@ export default function Footer() {
             </a>
           </div>
 
-          <div className='flex flex-col items-center md:items-start space-y-2 w-full md:w-auto'>
-            <Link href={"/"}>
-              <Image
-                src='/logo.png'
-                className='w-[180px] h-auto'
-                alt='Logo'
-                width={100}
-                height={100}
-              />
-            </Link>
-            <h3>A Place Like Home</h3>
-            <p>No 7 Farayola street, Bodija, Ibadan.</p>
-          </div>
           {/* Newsletter Section */}
-          <div className='flex flex-col items-center md:items-start space-y-2 w-full md:w-auto'>
+          <div className='flex flex-col flex-1 items-center md:items-start space-y-2 w-full md:w-auto'>
             <h3 className='text-lg font-semibold'>Join our newsletter</h3>
             <p className='text-gray-400'>Stay connected and informed:</p>
             <div className='flex flex-col lg:flex-row sm:justify-center gap-2 w-full'>
@@ -81,7 +88,7 @@ export default function Footer() {
           </div>
         </div>
         {/* Social Media Section */}
-        <div className='flex flex-wrap justify-center md:justify-end gap-4 border-t-2 border-b-2 border-gray-400 py-6'>
+        <div className='flex flex-wrap justify-center  gap-4 border-t-2 border-b-2 border-gray-400 py-6'>
           <a
             href='#'
             className='text-gray-400 hover:text-white'

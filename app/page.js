@@ -7,23 +7,44 @@ import {
 } from "@/components/ui/accordion";
 import Image from "next/image";
 import { BsArrowRight, BsYoutube } from "react-icons/bs";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+
+const images = [
+  "/sings-citizens.jpg",
+  "hero-pastor.jpg",
+  "https://drive.google.com/drive/folders/1nwvegHTbHceHzC1iGE2X-rD1DjsEOJTe",
+];
 
 export default function Home() {
+
+    const [current, setCurrent] = useState(0);
+
+    // Auto slide every 4 seconds
+    useEffect(() => {
+      const timer = setInterval(() => {
+        setCurrent((prev) => (prev + 1) % images.length);
+      }, 4000);
+      return () => clearInterval(timer);
+    }, []);
+
   return (
     <section className='w-full min-h-screen bg-[#0A0D11]'>
       {/* Hero Section */}
       <div
         className='relative min-h-screen w-full flex flex-col items-center justify-center bg-cover bg-center'
         style={{
-          backgroundImage: "url('/home.jpg')",
+          backgroundImage: "url('/sings-citizens.jpg')",
         }}>
+        <div className='absolute bg-black/50 h-screen w-full'></div>
         {/* Hero Content */}
         <div className='container mx-auto min-h-screen relative z-20 flex flex-col items-center justify-center w-full pt-[180px] pb-8 px-4 sm:px-6'>
-          <h4 className='text-black font-bold text-lg sm:text-xl mb-3 leading-none text-center'>
+          <h4 className='text-accent font-bold text-lg sm:text-xl mb-3 leading-none text-center'>
             Welcome to The Citizen's Place Church
           </h4>
           <h1 className='leading-none text-4xl sm:text-6xl md:text-6xl text-white font-semibold mb-4 text-center max-w-4xl'>
-            You're Not Just a <br /> Visitor - You're a Citizen
+            You're Not Just a <br /> Visitor -{" "}
+            <span className=''>You're a Citizen</span>
           </h1>
           <p className='text-base sm:text-lg text-white mb-6 text-center max-w-2xl'>
             At The Citizen’s Place, we believe that each encounter is more than
@@ -342,26 +363,35 @@ export default function Home() {
       </div>
       {/* About Founder Section */}
 
-      <div className='bg-[#eaf3ff]'>
-        <div className='container w-full h-auto py-8 sm:py-8 md:py-12 pb-8 px-2 sm:px-4'>
-          <h2 className='text-black text-xl sm:text-2xl md:text-4xl font-bold text-center mb-4 sm:mb-6'>
-            Meet Our Pastor
-          </h2>
-          <div className='flex flex-col lg:flex-row items-center'>
-            <div className='flex justify-center'>
+      <div className='bg-[#0a0d11] mb-10 text-white'>
+        <div className='container w-full h-auto py-8 sm:py-8 md:py-12 pb-8 px-2 sm:px-4 space-y-8 lg:space-y-12'>
+          <div className='flex flex-col items-center mb-4 sm:mb-12 gap-2'>
+            <h2 className='text-accent text-xl sm:text-2xl md:text-4xl font-bold text-center '>
+              Meet Our Pastors
+            </h2>
+            {/* <hr className='w-1/2' /> */}
+          </div>
+          <div className='flex flex-col lg:flex-row items-center justify-between gap-4'>
+            <div className='flex justify-center flex-1 '>
               <Image
                 src='/pastorandwife.png'
                 alt='About Founder'
                 className='mb-4 h-auto w-full sm:w-[90%] rounded-lg object-cover'
-                width={400}
-                height={400}
+                width={350}
+                height={350}
               />
             </div>
-            <div className='flex flex-col text-black flex-1 space-y-8'>
-              <h2 className='text-base sm:text-xl font-semibold text-gray-700 text-center lg:text-start'>
+            <div className='flex flex-col text-white space-y-8 flex-1'>
+              <h2 className='text-base sm:text-xl font-semibold text-center lg:text-start'>
                 YINKA AND NIKE OLADERU
               </h2>
-              <p className='text-base sm:text-xl text-gray-700 text-justify'>
+              <p>
+                We are a church that believes in Jesus & loves God and people Be
+                a part of our social media community for daily inspiration.
+                Follow us on Facebook and Instagram or reach out to us for more
+                inquiries.
+              </p>
+              {/* <p className='text-base sm:text-xl text-gray-700 text-justify'>
                 Yinka and Nike Oladeru are passionate lover of God whose sole
                 drive is to see a generation of young people consumed with
                 hunger for more of Jesus. He consistently desires and pursues a
@@ -373,62 +403,54 @@ export default function Home() {
                 Nike Oladeru has been used by God to bless the body of Christ
                 with many songs among which love for God, desire for greater
                 light, and revelation of the ways of God are consistent themes.
-              </p>
+              </p> */}
 
               <div className='flex flex-col md:flex-row gap-4 md:gap-16 justify-center md:justify-start'>
-                <button className='w-full sm:w-auto px-6 py-4 sm:py-5 bg-[#006CFF] flex items-center justify-center gap-2 rounded'>
-                  <p className='text-base sm:text-xl text-white'>Read More</p>
-                </button>
+                <Link
+                  className='w-full sm:w-[200px] px-6 py-4 sm:py-5 bg-[#006CFF] flex items-center justify-center gap-2 rounded'
+                  href='/about'>
+                  <p className='text-base sm:text-xl text-white'>Read bio</p>
+                </Link>
 
-                <button className='w-full sm:w-auto px-6 py-4 sm:py-5 bg-black flex items-center justify-center gap-2 rounded'>
+                {/* <button className='w-full sm:w-auto px-6 py-4 sm:py-5 bg-black flex items-center justify-center gap-2 rounded'>
                   <p className='text-base sm:text-xl text-white'>
                     Quote by Pastor
                   </p>
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
 
-          {/* Preview of Pastors */}
-          <div className='flex flex-col md:flex-row justify-around mt-20 gap-6'>
-            {/* Main Pastor */}
-            <div className='flex flex-col items-center'>
-              <div className='w-100 h-100 mb-4'>
-                <Image
-                  src='/pastorandwife.png'
-                  alt='About Founder'
-                  className='rounded-lg object-cover'
-                  width={300}
-                  height={300}
-                />
-              </div>
-              <h2 className='text-base sm:text-xl font-semibold text-gray-700 text-center'>
-                Yinka and Nike Oladeru
-              </h2>
-              <a className='text-base sm:text-xl font-semibold text-[#006CFF]'>
-                Read Biography
-                <div className='h-[2px] bg-[#006CFF] rounded-full' />
-              </a>
+          {/* Pastor Muyiwa */}
+          <div className='flex flex-col lg:flex-row items-center text-white'>
+            <div className='flex justify-center w-100 h-100 flex-1'>
+              <Image
+                src='/pastor-muyiwa.svg'
+                alt='About Founder'
+                className='mb-4 h-auto w-full sm:w-[90%] rounded-lg object-cover'
+                width={350}
+                height={350}
+              />
             </div>
-            {/* Pastor Mayowa */}
-            <div className='flex flex-col items-center'>
-              <div className='w-100 h-100 mb-4'>
-                <Image
-                  src='/pastorandwife.png'
-                  alt='Pastor Mayowa of Citizen Place'
-                  className='rounded-lg object-cover'
-                  width={300}
-                  height={300}
-                />
-              </div>
-              <h2 className='text-base sm:text-xl font-semibold text-gray-700 text-center'>
-                Pastor Mayowa
-              </h2>
 
-              <a className='text-base sm:text-xl font-semibold text-[#006CFF]'>
-                Read Biography
-                <div className='h-[2px] bg-[#006CFF] rounded-full' />
-              </a>
+            <div className='flex flex-col flex-1 space-y-8'>
+              <h2 className='text-base sm:text-xl font-semibold text-center lg:text-start'>
+                PASTOR MUYIWA
+              </h2>
+              <p>
+                We are a church that believes in Jesus & loves God and people Be
+                a part of our social media community for daily inspiration.
+                Follow us on Facebook and Instagram or reach out to us for more
+                inquiries.
+              </p>
+
+              <div className='flex flex-col md:flex-row gap-4 md:gap-16 justify-center md:justify-start'>
+                <Link
+                  className='w-full sm:w-[200px] px-6 py-4 sm:py-5 flex items-center justify-center gap-2 rounded border border-white'
+                  href='/about'>
+                  <p className='text-base sm:text-xl text-white'>Read bio</p>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
