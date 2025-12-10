@@ -10,17 +10,18 @@ function About() {
         <h2 className='text-accent text-center text-2xl sm:text-4xl font-bold mb-8'>
           About Yinka Oladeru
         </h2>
-        <div className='flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-8'>
-          <div className='flex-1 w-full'>
-            <div className='rounded w-full'>
-              <img
-                src='pastor-rectangle.svg'
-                alt='Picture of Yinka Oladeru'
-                className='object-cover w-full h-full rounded'
-              />
-            </div>
+        <div className='flex flex-col lg:flex-row items-stretch justify-center gap-12 lg:gap-8 h-auto'>
+          {/* IMAGE */}
+          <div className='flex-1 flex'>
+            <img
+              src='pastor-rectangle.svg'
+              alt='Picture of Yinka Oladeru'
+              className='w-full h-full max-h-[500px] object-cover rounded-[34px]'
+            />
           </div>
-          <div className='flex-1'>
+
+          {/* TEXT */}
+          <div className='flex-1 flex flex-col justify-between gap-4'>
             <p>
               It is a long established fact that a reader will be distracted by
               the readable content of a page when looking at its layout. The
@@ -34,12 +35,13 @@ function About() {
               The point of using Lorem Ipsum is that it has a more-or-less
               normal distribution of letters, as opposed to using 'Content
             </p>
-            <div className='w-full flex justify-center mt-8 gap-4'>
-              <button className='w-full px-6 py-4 sm:py-5 flex items-center justify-center gap-2 rounded border'>
+
+            <div className='w-full flex justify-center gap-4'>
+              <button className='w-full px-6 py-4 sm:py-5 flex items-center justify-center gap-2 rounded border border-white'>
                 <p className='text-base sm:text-xl'>Books</p>
               </button>
 
-              <button className='w-full px-6 py-4 sm:py-5 flex items-center justify-center gap-2 rounded border'>
+              <button className='w-full px-6 py-4 sm:py-5 flex items-center justify-center gap-2 rounded border border-white'>
                 <p className='text-base sm:text-xl'>Message</p>
               </button>
             </div>
@@ -53,17 +55,18 @@ function About() {
           <h2 className='text-[#0A0D11] text-center text-2xl sm:text-4xl font-bold mb-8'>
             About Nike Oladeru
           </h2>
-          <div className='flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-8'>
-            <div className='flex-1 w-full'>
-              <div className='rounded-lg w-full'>
-                <img
-                  src='pastor-nike.jpg'
-                  alt='Picture of Yinka Oladeru'
-                  className='object-cover w-full h-full rounded-[34px]'
-                />
-              </div>
+          <div className='flex flex-col lg:flex-row items-stretch justify-center gap-12 lg:gap-8 h-auto '>
+            {/* IMAGE */}
+            <div className='flex-1 flex'>
+              <img
+                src='pastor-nike.jpg'
+                alt='Picture of Yinka Oladeru'
+                className='w-full h-full max-h-[500px] object-cover rounded-[34px]'
+              />
             </div>
-            <div className='flex-1'>
+
+            {/* TEXT */}
+            <div className='flex-1 min-h-0  flex flex-col justify-between gap-4'>
               <p>
                 It is a long established fact that a reader will be distracted
                 by the readable content of a page when looking at its layout.
@@ -79,7 +82,8 @@ function About() {
                 has a more-or-less normal distribution of letters, as opposed to
                 using 'Content
               </p>
-              <div className='w-full flex justify-center mt-8 gap-4'>
+
+              <div className='w-full flex justify-center gap-4'>
                 <button className='w-full px-6 py-4 sm:py-5 flex items-center justify-center gap-2 rounded border border-[#0A0D11]'>
                   <p className='text-base sm:text-xl'>Books</p>
                 </button>
