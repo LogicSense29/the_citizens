@@ -79,7 +79,7 @@ export default function Home() {
           <motion.h4 variants={fadeInUp} className='text-accent font-bold text-sm sm:text-xl mb-4 leading-none text-center tracking-wider uppercase'>
             Welcome to The Citizen's Place Church
           </motion.h4>
-          <motion.h1 variants={fadeInUp} className='leading-tight text-5xl sm:text-7xl md:text-8xl text-white font-bold mb-6 text-center max-w-5xl drop-shadow-2xl'>
+          <motion.h1 variants={fadeInUp} className='leading-tight text-4xl sm:text-7xl md:text-8xl text-white font-bold mb-6 text-center max-w-5xl drop-shadow-2xl'>
             You're Not Just a <br /> Visitor -{" "}
             <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300'>You're a Citizen</span>
           </motion.h1>
@@ -89,7 +89,7 @@ export default function Home() {
             background or life journey.
           </motion.p> */}
           {/* hero buttons or actions */}
-          <motion.div variants={fadeInUp} className='flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 w-full mb-6'>
+          <motion.div variants={fadeInUp} className='flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 w-full lg:mb-6'>
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
