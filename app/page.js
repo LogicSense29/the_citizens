@@ -12,8 +12,9 @@ import Link from "next/link";
 
 const images = [
   "/sings-citizens.jpg",
-  "hero-pastor.jpg",
-  "https://drive.google.com/drive/folders/1nwvegHTbHceHzC1iGE2X-rD1DjsEOJTe",
+  "/hero-pastor.jpg",
+  "/home-1.jpg",
+  "/home.jpg"
 ];
 
 export default function Home() {
@@ -31,12 +32,26 @@ export default function Home() {
   return (
     <section className='w-full min-h-screen bg-[#0A0D11]'>
       {/* Hero Section */}
-      <div
-        className='relative min-h-screen w-full flex flex-col items-center justify-center bg-cover bg-center'
-        style={{
-          backgroundImage: "url('/sings-citizens.jpg')",
-        }}>
-        <div className='absolute bg-black/50 h-screen w-full'></div>
+      <div className='relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden'>
+        {/* Background Images with Zoom Effect */}
+        {images.map((img, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+              index === current ? "opacity-100 scale-110" : "opacity-0 scale-100"
+            }`}
+          >
+            <Image
+              src={img}
+              alt="Hero Background"
+              fill
+              className="object-cover"
+              priority={index === 0}
+            />
+          </div>
+        ))}
+        {/* Overlay */}
+        <div className='absolute bg-black/50 h-screen w-full z-1'></div>
         {/* Hero Content */}
         <div className='container mx-auto min-h-screen relative z-20 flex flex-col items-center justify-center w-full pt-[180px] pb-8 px-4 sm:px-6'>
           <h4 className='text-accent font-bold text-lg sm:text-xl mb-3 leading-none text-center'>
@@ -202,15 +217,15 @@ export default function Home() {
             <div className='bg-[#eaf3ff] rounded-lg '>
               <div className='relative'>
                 <Image
-                  src='/messages-img.png'
-                  alt='Message Image 1'
+                  src='https://img.youtube.com/vi/jrZVyuKCIjc/0.jpg'
+                  alt='YouTube Video Thumbnail for THE EXPERIENCE OF THE HOLY SPIRIT'
                   className='mb-4 w-full h-auto'
                   width={400}
                   height={200}
                 />
                 <div className='absolute inset-0 flex items-center justify-center'>
                   <a
-                    href='https://youtu.be/1XAYhwN4GKY?si=LqIee70_pF9zKsQ8www.youtube.com'
+                    href='https://youtu.be/jrZVyuKCIjc?si=a44chjuCwc9_C0Ow'
                     target='_blank'
                     rel='noopener noreferrer'>
                     <Image
@@ -224,28 +239,28 @@ export default function Home() {
                 </div>
               </div>
               <h3 className='text-base sm:text-lg md:text-xl font-semibold mb-2 text-gray-700'>
-                THE MINDSET OF FAITH
+                THE EXPERIENCE OF THE HOLY SPIRIT
               </h3>
               <p className='text-gray-700 text-sm sm:text-base md:text-lg'>
                 Kindly subscribe to our YouTube channel.
               </p>
               <p className='text-gray-500 text-xs sm:text-sm md:text-base'>
-                21th September 2025
+                12th January 2025
               </p>
             </div>
             {/* 2nd card  */}
             <div className='bg-[#eaf3ff] rounded-lg'>
               <div className='relative'>
                 <Image
-                  src='/messages-img.png'
-                  alt='Message Image 1'
+                  src='https://img.youtube.com/vi/r318EKHXPcA/0.jpg'
+                  alt='HOLY SPIRIT: PREDICTABLE OUTCOME'
                   className='mb-4 w-full h-auto'
                   width={400}
                   height={200}
                 />
                 <div className='absolute inset-0 flex items-center justify-center'>
                   <a
-                    href='https://youtu.be/_Ym0IZQxxE0?si=PNCooU4OJWF9RCae'
+                    href='https://youtu.be/r318EKHXPcA?si=n4EQs6VLYviqvdMh'
                     target='_blank'
                     rel='noopener noreferrer'>
                     <Image
@@ -259,28 +274,29 @@ export default function Home() {
                 </div>
               </div>
               <h3 className='text-base sm:text-lg md:text-xl font-semibold mb-2 text-gray-700'>
-                THEATHERS OF WAR
+                HOLY SPIRIT: PREDICTABLE OUTCOME
               </h3>
               <p className='text-gray-700 text-sm sm:text-base md:text-lg'>
                 Kindly subscribe to our YouTube channel.
               </p>
               <p className='text-gray-500 text-xs sm:text-sm md:text-base'>
-                21th September 2025
+                4th January 2025
               </p>
             </div>
             {/* 3rd card  */}
             <div className='bg-[#eaf3ff] rounded-lg'>
               <div className='relative'>
                 <Image
-                  src='/messages-img.png'
-                  alt='Message Image 1'
+                  src={'https://img.youtube.com/vi/NPMlEd-MEp8/hqdefault.jpg' || '/messages-img.png'}
+                  alt='THE VIOCE OF A TRIUMPH'
                   className='mb-4 w-full h-auto'
                   width={400}
                   height={200}
+                  unoptimized 
                 />
                 <div className='absolute inset-0 flex items-center justify-center'>
                   <a
-                    href='https://www.youtube.com'
+                    href='https://youtu.be/NPMlEd-MEp8?si=miVW0UfWz6r15ka_'
                     target='_blank'
                     rel='noopener noreferrer'>
                     <Image
@@ -294,13 +310,13 @@ export default function Home() {
                 </div>
               </div>
               <h3 className='text-base sm:text-lg md:text-xl font-semibold mb-2 text-gray-700'>
-                CULTIVATING OWNERSHIP MENTALITY
+                THE VIOCE OF A TRIUMPH
               </h3>
               <p className='text-gray-700 text-sm sm:text-base md:text-lg'>
                 Kindly subscribe to our YouTube channel.
               </p>
               <p className='text-gray-500 text-xs sm:text-sm md:text-base'>
-                18th January 2025
+                28th December 2025
               </p>
             </div>
           </div>
@@ -371,25 +387,31 @@ export default function Home() {
             </h2>
             {/* <hr className='w-1/2' /> */}
           </div>
-          <div className='flex flex-col lg:flex-row items-center justify-between gap-4'>
-            <div className='flex justify-center flex-1 '>
+          <div className='flex flex-col lg:flex-row items-stretch justify-between lg:gap-15 gap-10'>
+            <div className='flex justify-center flex-1 relative min-h-[500px] lg:min-h-0 w-full group'>
+              {/* Stack effect */}
+              <div className='absolute inset-0 border-2 border-[#006CFF] translate-x-3 translate-y-3 rounded-lg z-0 transition-transform duration-300 group-hover:translate-x-5 group-hover:translate-y-5'></div>
               <Image
-                src='/pastorandwife.png'
+                src='/oladeru-b.jpg'
                 alt='About Founder'
-                className='mb-4 h-auto w-full sm:w-[90%] rounded-lg object-cover'
-                width={350}
-                height={350}
+                fill
+                className='rounded-lg object-cover relative z-10 shadow-2xl'
               />
             </div>
-            <div className='flex flex-col text-white space-y-8 flex-1'>
-              <h2 className='text-base sm:text-xl font-semibold text-center lg:text-start'>
+            <div className='flex flex-col text-white space-y-6 flex-1 bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm justify-center'>
+              <div className="w-16 h-1 bg-[#006CFF] mb-2"></div>
+              <h2 className='text-xl sm:text-2xl font-bold text-start tracking-wide uppercase'>
                 YINKA AND NIKE OLADERU
               </h2>
-              <p>
-                We are a church that believes in Jesus & loves God and people Be
-                a part of our social media community for daily inspiration.
-                Follow us on Facebook and Instagram or reach out to us for more
-                inquiries.
+              <p className='text-justify text-gray-300 leading-relaxed font-light'>
+                Pastors Yinka and Nike Oladeru are the dynamic leaders. Married
+                in 2012, they share a rich history, having met in college in
+                Nigeria. Both alumni of the prestigious Rhema Bible Training
+                College, they have been equipped with a strong foundation in
+                ministry. With a combined ministerial experience, they have
+                served in various capacities, including associate pastors.
+                Together, they are devoted parents to their two children, Niyi
+                and Wura.
               </p>
               {/* <p className='text-base sm:text-xl text-gray-700 text-justify'>
                 Yinka and Nike Oladeru are passionate lover of God whose sole
@@ -405,9 +427,9 @@ export default function Home() {
                 light, and revelation of the ways of God are consistent themes.
               </p> */}
 
-              <div className='flex flex-col md:flex-row gap-4 md:gap-16 justify-center md:justify-start'>
+              <div className='flex flex-col md:flex-row gap-4 md:gap-16 justify-center md:justify-start pt-4'>
                 <Link
-                  className='w-full sm:w-[200px] px-6 py-4 sm:py-5 bg-[#006CFF] flex items-center justify-center gap-2 rounded'
+                  className='w-full sm:w-[200px] px-6 py-4 sm:py-5 bg-transparent border border-white/20 flex items-center justify-center gap-2 rounded hover:bg-[#006CFF] hover:border-[#006CFF] transition-all duration-300 group'
                   href='/about'>
                   <p className='text-base sm:text-xl text-white'>Read bio</p>
                 </Link>
@@ -422,34 +444,58 @@ export default function Home() {
           </div>
 
           {/* Pastor Muyiwa */}
-          <div className='flex flex-col lg:flex-row items-center text-white'>
-            <div className='flex justify-center w-100 h-100 flex-1'>
+          <div className='flex flex-col lg:flex-row-reverse items-stretch justify-between lg:gap-15 gap-10'>
+            <div className='flex justify-center flex-1 relative min-h-[500px] lg:min-h-0 w-full group'>
+              {/* Stack effect */}
+              <div className='absolute inset-0 border-2 border-[#006CFF] translate-x-3 translate-y-3 rounded-lg z-0 transition-transform duration-300 group-hover:translate-x-5 group-hover:translate-y-5'></div>
               <Image
-                src='/pastor-muyiwa.svg'
+                src='/oladeru.jpg'
                 alt='About Founder'
-                className='mb-4 h-auto w-full sm:w-[90%] rounded-lg object-cover'
-                width={350}
-                height={350}
+                fill
+                className='rounded-lg object-cover relative z-10 shadow-2xl'
               />
             </div>
-
-            <div className='flex flex-col flex-1 space-y-8'>
-              <h2 className='text-base sm:text-xl font-semibold text-center lg:text-start'>
+            <div className='flex flex-col text-white space-y-6 flex-1 bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm justify-center'>
+              <div className="w-16 h-1 bg-[#006CFF] mb-2"></div>
+              <h2 className='text-xl sm:text-2xl font-bold text-start tracking-wide uppercase'>
                 PASTOR MUYIWA
               </h2>
-              <p>
-                We are a church that believes in Jesus & loves God and people Be
-                a part of our social media community for daily inspiration.
-                Follow us on Facebook and Instagram or reach out to us for more
-                inquiries.
+              <p className='text-justify text-gray-300 leading-relaxed font-light'>
+                Pastors Yinka and Nike Oladeru are the dynamic leaders. Married
+                in 2012, they share a rich history, having met in college in
+                Nigeria. Both alumni of the prestigious Rhema Bible Training
+                College, they have been equipped with a strong foundation in
+                ministry. With a combined ministerial experience, they have
+                served in various capacities, including associate pastors.
+                Together, they are devoted parents to their two children, Niyi
+                and Wura.
+              </p>
+              {/* <p className='text-base sm:text-xl text-gray-700 text-justify'>
+                Yinka and Nike Oladeru are passionate lover of God whose sole
+                drive is to see a generation of young people consumed with
+                hunger for more of Jesus. He consistently desires and pursues a
+                deeper walk with the Holy Spirit, which is the inspiration for
+                his relentless drive to invest time in communion and prayer.
               </p>
 
-              <div className='flex flex-col md:flex-row gap-4 md:gap-16 justify-center md:justify-start'>
+              <p className='text-base sm:text-xl text-gray-700 text-justify'>
+                Nike Oladeru has been used by God to bless the body of Christ
+                with many songs among which love for God, desire for greater
+                light, and revelation of the ways of God are consistent themes.
+              </p> */}
+
+              <div className='flex flex-col md:flex-row gap-4 md:gap-16 justify-center md:justify-start pt-4'>
                 <Link
-                  className='w-full sm:w-[200px] px-6 py-4 sm:py-5 flex items-center justify-center gap-2 rounded border border-white'
+                  className='w-full sm:w-[200px] px-6 py-4 sm:py-5 bg-transparent border border-white/20 flex items-center justify-center gap-2 rounded hover:bg-[#006CFF] hover:border-[#006CFF] transition-all duration-300 group'
                   href='/about'>
                   <p className='text-base sm:text-xl text-white'>Read bio</p>
                 </Link>
+
+                {/* <button className='w-full sm:w-auto px-6 py-4 sm:py-5 bg-black flex items-center justify-center gap-2 rounded'>
+                  <p className='text-base sm:text-xl text-white'>
+                    Quote by Pastor
+                  </p>
+                </button> */}
               </div>
             </div>
           </div>

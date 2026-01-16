@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/worship", label: "Worship" },
   { href: "/messages", label: "Messages" },
+  { href: "/nike-oladeru", label: "Nike Oladeru" },
   { href: "/im-new", label: "I'm new" },
   { href: "/give", label: "Give" },
   { href: "/contact", label: "Contact us" },
