@@ -9,12 +9,13 @@ import Image from "next/image";
 import { BsArrowRight, BsYoutube } from "react-icons/bs";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const images = [
   "/sings-citizens.jpg",
   "/hero-pastor.jpg",
   "/home-1.jpg",
-  "/home.jpg"
+  "/nikeandmember.jpg"
 ];
 
 export default function Home() {
@@ -28,6 +29,22 @@ export default function Home() {
       }, 4000);
       return () => clearInterval(timer);
     }, []);
+
+    // Animation Variants
+    const fadeInUp = {
+      hidden: { opacity: 0, y: 20 },
+      visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+    };
+
+    const staggerContainer = {
+      hidden: { opacity: 0 },
+      visible: {
+        opacity: 1,
+        transition: {
+          staggerChildren: 0.2
+        }
+      }
+    };
 
   return (
     <section className='w-full min-h-screen bg-[#0A0D11]'>
@@ -51,38 +68,51 @@ export default function Home() {
           </div>
         ))}
         {/* Overlay */}
-        <div className='absolute bg-black/50 h-screen w-full z-1'></div>
+        <div className='absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[#0A0D11] z-10'></div>
+        
         {/* Hero Content */}
-        <div className='container mx-auto min-h-screen relative z-20 flex flex-col items-center justify-center w-full pt-[180px] pb-8 px-4 sm:px-6'>
-          <h4 className='text-accent font-bold text-lg sm:text-xl mb-3 leading-none text-center'>
+        <motion.div 
+          className='container mx-auto min-h-screen relative z-20 flex flex-col items-center justify-center w-full pt-[180px] pb-8 px-4 sm:px-6'
+          animate="visible"
+          variants={staggerContainer}
+        >
+          <motion.h4 variants={fadeInUp} className='text-accent font-bold text-sm sm:text-xl mb-4 leading-none text-center tracking-wider uppercase'>
             Welcome to The Citizen's Place Church
-          </h4>
-          <h1 className='leading-none text-4xl sm:text-6xl md:text-6xl text-white font-semibold mb-4 text-center max-w-4xl'>
+          </motion.h4>
+          <motion.h1 variants={fadeInUp} className='leading-tight text-5xl sm:text-7xl md:text-8xl text-white font-bold mb-6 text-center max-w-5xl drop-shadow-2xl'>
             You're Not Just a <br /> Visitor -{" "}
-            <span className=''>You're a Citizen</span>
-          </h1>
-          <p className='text-base sm:text-lg text-white mb-6 text-center max-w-2xl'>
+            <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300'>You're a Citizen</span>
+          </motion.h1>
+          {/* <motion.p variants={fadeInUp} className='text-lg sm:text-xl text-gray-200 mb-10 text-center max-w-2xl leading-relaxed'>
             At The Citizen’s Place, we believe that each encounter is more than
-            a visit— it’s a step towards becoming family. Regardless of your
+            a visit—it’s a step towards becoming family. Regardless of your
             background or life journey.
-          </p>
+          </motion.p> */}
           {/* hero buttons or actions */}
-          <div className='flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 w-full'>
-            <button className='w-full sm:w-auto px-6 py-4 sm:py-5 bg-[#006CFF] flex items-center justify-center gap-2 rounded'>
-              <p className='text-base sm:text-xl'>I am new</p>
-              <BsArrowRight className='text-white text-2xl sm:text-3xl' />
-            </button>
-            <button className='w-full sm:w-auto px-6 py-4 sm:py-5 bg-[#0E0E0E] flex items-center justify-center gap-2 rounded'>
-              <BsYoutube className='text-white text-2xl sm:text-3xl' />
-              <p className='text-base sm:text-xl'>Watch Online</p>
-            </button>
-          </div>
-        </div>
+          <motion.div variants={fadeInUp} className='flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 w-full mb-6'>
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className='w-full sm:w-auto px-8 py-4 sm:py-5 bg-[#006CFF] hover:bg-[#0055cc] flex items-center justify-center gap-3 rounded-md shadow-lg shadow-blue-500/30 transition-colors'
+            >
+              <p className='text-lg sm:text-xl font-medium text-white'>I am new</p>
+              <BsArrowRight className='text-white text-2xl' />
+            </motion.button>
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className='w-full sm:w-auto px-8 py-4 sm:py-5 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 flex items-center justify-center gap-3 rounded-md transition-colors'
+            >
+              <BsYoutube className='text-white text-2xl' />
+              <p className='text-lg sm:text-xl font-medium text-white'>Watch Online</p>
+            </motion.button>
+          </motion.div>
+        </motion.div>
       </div>
       {/* Other Sections */}
       <div className='bg-[#0A0D11] py-12 sm:py-20 min-h-[400px] h-auto relative'>
         <div className=''>
-          <div className="absolute top-[-40px] sm:top-[-50px] w-full max-w-2xl sm:max-w-3xl left-0 sm:left-1/2 translate-x-0 sm:-translate-x-1/2 flex flex-col justify-center text-center items-center bg-[url('/top-qoute-text.svg')] bg-no-repeat bg-cover bg-center">
+          <div className="absolute top-[-40px] sm:top-[-50px] w-full max-w-2xl sm:max-w-3xl left-0 sm:left-1/2 translate-x-0 sm:-translate-x-1/2 flex flex-col justify-center text-center items-center bg-[url('/top-qoute-text.svg')] bg-no-repeat bg-cover bg-center z-20">
             {/* <div className='absolute bg-black rounded-[61px] top-[-50px] w-full max-w-2xl sm:max-w-3xl left-1/2 -translate-x-1/2 flex flex-col p-6 sm:p-20 justify-center text-center items-center'></div> */}
             {/* <div className='absolute -top-[0px] left-[20px] sm:left-[50px] w-[80px] sm:w-[120px] h-[60px] sm:h-[100px] bg-black rounded-b-full'></div>
           <div className='absolute -top-[0px] left-[80px] sm:left-[120px] w-[80px] sm:w-[120px] h-[60px] sm:h-[100px] bg-white rounded-l-full'></div>
