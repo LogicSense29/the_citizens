@@ -79,15 +79,13 @@ export default function Home() {
           <motion.h4 variants={fadeInUp} className='text-accent font-bold text-sm sm:text-xl mb-4 leading-none text-center tracking-wider uppercase'>
             Welcome to The Citizen's Place Church
           </motion.h4>
-          <motion.h1 variants={fadeInUp} className='leading-tight text-4xl sm:text-7xl md:text-8xl text-white font-bold mb-6 text-center max-w-5xl drop-shadow-2xl'>
+          <motion.h1 variants={fadeInUp} className='leading-tight text-4xl sm:text-6xl md:text-8xl text-white font-bold mb-6 text-center max-w-5xl drop-shadow-2xl'>
             You're Not Just a <br /> Visitor -{" "}
             <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300'>You're a Citizen</span>
           </motion.h1>
-          {/* <motion.p variants={fadeInUp} className='text-lg sm:text-xl text-gray-200 mb-10 text-center max-w-2xl leading-relaxed'>
-            At The Citizen’s Place, we believe that each encounter is more than
-            a visit—it’s a step towards becoming family. Regardless of your
-            background or life journey.
-          </motion.p> */}
+          <motion.p variants={fadeInUp} className='text-lg sm:text-xl text-gray-200 mb-10 text-center max-w-2xl leading-relaxed'>
+            Each encounter is more than a visit, it’s a step towards becoming family, regardless of your journey.
+          </motion.p>
           {/* hero buttons or actions */}
           <motion.div variants={fadeInUp} className='flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 w-full lg:mb-6'>
             <motion.button 
@@ -351,7 +349,7 @@ export default function Home() {
             </div>
           </div>
           <div className='w-full flex justify-center mt-6'>
-            <button className='w-full sm:w-auto px-6 py-4 sm:py-5 bg-[#006CFF] flex items-center justify-center gap-2 rounded'>
+            <button className='w-full sm:w-auto px-6 py-4 sm:py-5 bg-[#006CFF] flex items-center justify-center gap-2 rounded-md'>
               <p className='text-base sm:text-xl'>View all messages</p>
               <BsArrowRight className='text-white text-2xl sm:text-3xl' />
             </button>
@@ -401,7 +399,7 @@ export default function Home() {
             it.
           </h2>
           <div className='w-full flex justify-center mt-12'>
-            <button className='w-full sm:w-auto px-6 py-4 sm:py-5 bg-[#006CFF] flex items-center justify-center gap-2 rounded'>
+            <button className='w-full sm:w-auto px-6 py-4 sm:py-5 bg-[#006CFF] flex items-center justify-center gap-2 rounded-md'>
               <p className='text-base sm:text-xl'>Prayer Request</p>
             </button>
           </div>
@@ -410,7 +408,7 @@ export default function Home() {
       {/* About Founder Section */}
 
       <div className='bg-[#0a0d11] mb-10 text-white'>
-        <div className='container w-full h-auto py-8 sm:py-8 md:py-12 pb-8 px-2 sm:px-4 space-y-8 lg:space-y-12'>
+        <div className='container w-full h-auto py-8 sm:py-8 md:py-12 pb-8 px-5 sm:px-4 space-y-8 lg:space-y-12'>
           <div className='flex flex-col items-center mb-4 sm:mb-12 gap-2'>
             <h2 className='text-accent text-xl sm:text-2xl md:text-4xl font-bold text-center '>
               Meet Our Pastors
@@ -420,7 +418,7 @@ export default function Home() {
           <div className='flex flex-col lg:flex-row items-stretch justify-between lg:gap-15 gap-10'>
             <div className='flex justify-center flex-1 relative min-h-[500px] lg:min-h-0 w-full group'>
               {/* Stack effect */}
-              <div className='absolute inset-0 border-2 border-[#006CFF] translate-x-3 translate-y-3 rounded-lg z-0 transition-transform duration-300 group-hover:translate-x-5 group-hover:translate-y-5'></div>
+              <div className='absolute inset-0 border-2 border-[#006CFF] translate-x-2 translate-y-2 sm:translate-x-3 sm:translate-y-3 rounded-lg z-0 transition-transform duration-300 group-hover:translate-x-3 group-hover:translate-y-3 sm:group-hover:translate-x-5 sm:group-hover:translate-y-5'></div>
               <Image
                 src='/oladeru-b.jpg'
                 alt='About Founder'
@@ -459,8 +457,8 @@ export default function Home() {
 
               <div className='flex flex-col md:flex-row gap-4 md:gap-16 justify-center md:justify-start pt-4'>
                 <Link
-                  className='w-full sm:w-[200px] px-6 py-4 sm:py-5 bg-transparent border border-white/20 flex items-center justify-center gap-2 rounded hover:bg-[#006CFF] hover:border-[#006CFF] transition-all duration-300 group'
-                  href='/about'>
+                  className='w-full sm:w-[200px] px-6 py-4 sm:py-5 bg-transparent border border-white/20 flex items-center justify-center gap-2 rounded-md hover:bg-[#006CFF] hover:border-[#006CFF] transition-all duration-300 group'
+                  href='/nike-oladeru'>
                   <p className='text-base sm:text-xl text-white'>Read bio</p>
                 </Link>
 
@@ -477,7 +475,7 @@ export default function Home() {
           <div className='flex flex-col lg:flex-row-reverse items-stretch justify-between lg:gap-15 gap-10'>
             <div className='flex justify-center flex-1 relative min-h-[500px] lg:min-h-0 w-full group'>
               {/* Stack effect */}
-              <div className='absolute inset-0 border-2 border-[#006CFF] translate-x-3 translate-y-3 rounded-lg z-0 transition-transform duration-300 group-hover:translate-x-5 group-hover:translate-y-5'></div>
+              <div className='absolute inset-0 border-2 border-[#006CFF] translate-x-2 translate-y-2 sm:translate-x-3 sm:translate-y-3 rounded-lg z-0 transition-transform duration-300 group-hover:translate-x-3 group-hover:translate-y-3 sm:group-hover:translate-x-5 sm:group-hover:translate-y-5'></div>
               <Image
                 src='/oladeru.jpg'
                 alt='About Founder'
@@ -516,7 +514,7 @@ export default function Home() {
 
               <div className='flex flex-col md:flex-row gap-4 md:gap-16 justify-center md:justify-start pt-4'>
                 <Link
-                  className='w-full sm:w-[200px] px-6 py-4 sm:py-5 bg-transparent border border-white/20 flex items-center justify-center gap-2 rounded hover:bg-[#006CFF] hover:border-[#006CFF] transition-all duration-300 group'
+                  className='w-full sm:w-[200px] px-6 py-4 sm:py-5 bg-transparent border border-white/20 flex items-center justify-center gap-2 rounded-md hover:bg-[#006CFF] hover:border-[#006CFF] transition-all duration-300 group'
                   href='/about'>
                   <p className='text-base sm:text-xl text-white'>Read bio</p>
                 </Link>

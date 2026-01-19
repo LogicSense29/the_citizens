@@ -1,158 +1,398 @@
+"use client";
 import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
+  SelectValue,
 } from "@/components/ui/select";
 import Image from "next/image";
-import { BsYoutube } from "react-icons/bs";
-import { FiCalendar, FiLayers, FiSearch, FiUsers } from "react-icons/fi";
+import { BsYoutube, BsArrowRight } from "react-icons/bs";
+import { FiCalendar, FiLayers, FiSearch, FiUsers, FiPlay, FiFilter, FiChevronDown, FiChevronUp, FiLoader } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useMemo } from "react";
+import { fetchYoutubeVideos } from "@/lib/youtube";
 
-// Simulate backend data
-const months = [
-  "March 2025",
-  "February 2025",
-  "January 2025",
-  "December 2024",
-  "November 2024",
-  "October 2024",
-];
-const messages = months.flatMap((month, i) =>
-  Array.from({ length: Math.floor(Math.random() * 4) + 3 }, (_, idx) => ({
-    id: `${month}-${idx}`,
-    date: `${Math.floor(Math.random() * 28) + 1} ${month}`,
-    title: `Message for ${month} ${idx + 1}`,
+// Fallback Mock Data
+const fallbackMonths = ["March 2025", "February 2025", "January 2025"];
+const fallbackMessages = fallbackMonths.flatMap((month, i) =>
+  Array.from({ length: 4 }, (_, idx) => ({
+    id: `mock-${month}-${idx}`,
+    date: `${10 + idx} ${month}`,
+    title: `Sermon: The Experience of ${month}`,
+    series: "Sermon Series",
+    speaker: i % 2 === 0 ? "Pastor Yinka Oladeru" : "Pastor Nike Oladeru",
+    thumbnail: "/messages-img.png",
+    description: "Sample description for the sermon."
   }))
 );
 
-export default function MessagesPageContent() {
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
+
+const stagger = {
+  visible: { transition: { staggerChildren: 0.1 } }
+};
+
+export default function MessagesPage() {
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [videos, setVideos] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  useEffect(() => {
+    async function loadVideos() {
+      setLoading(true);
+      try {
+        const data = await fetchYoutubeVideos();
+        if (data && data.length > 0) {
+          setVideos(data);
+        } else {
+          // Keep empty or handle special case
+          console.log("No videos found, using fallback UI.");
+          setVideos(fallbackMessages);
+        }
+      } catch (err) {
+        setError("Could not load latest messages.");
+        setVideos(fallbackMessages);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadVideos();
+  }, []);
+
+  const filteredVideos = useMemo(() => {
+    return videos.filter(v => 
+      v.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      v.description?.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }, [videos, searchQuery]);
+
+  const featuredMessage = filteredVideos[0] || videos[0];
+
+  // Group videos by month
+  const groupedVideos = useMemo(() => {
+    const groups = {};
+    filteredVideos.slice(1).forEach(video => {
+        // Extract month and year from "12 March 2025"
+        const parts = video.date.split(" ");
+        const key = parts.length >= 3 ? `${parts[1]} ${parts[2]}` : "Recent Messages";
+        if (!groups[key]) groups[key] = [];
+        groups[key].push(video);
+    });
+    return groups;
+  }, [filteredVideos]);
+
   return (
-    <main className='min-h-screen bg-[#eaf3ff] w-full pt-[120px] sm:pt-[180px]'>
-      <div className='container mx-auto py-12 px-4 pt-[120px]'>
-        {/* Filter Section */}
-        <div className='p-6 sm:p-12 mb-8'>
-          <div className='flex flex-col sm:flex-row sm:items-center justify-center gap-6 sm:gap-8 mb-4'>
-            <h1 className='text-4xl sm:text-6xl font-bold flex-shrink-0 text-black'>
-              Watch our past messages
-            </h1>
-            <div className='w-full sm:w-1/2 max-w-md flex flex-col'>
-              <div className='relative flex items-center'>
-                <FiSearch className='absolute left-3 top-1/2 -translate-y-1/2 text-blue-600 w-5 h-5' />
-                <Input
-                  id='search'
-                  type='text'
-                  placeholder='Search for keywords'
-                  className='w-full border-2 border-blue-200 focus:border-blue-600 focus:ring-blue-600 rounded-lg pl-10 pr-4 py-2'
-                  aria-label='Search for keywords'
-                  defaultValue=''
-                />
-              </div>
-            </div>
-          </div>
-          <div className='flex flex-col sm:flex-row gap-4 justify-center'>
-            <div className='w-full sm:w-auto min-w-[160px] flex flex-col'>
-              <div className='relative flex items-center'>
-                <FiCalendar className='absolute left-3 top-1/2 -translate-y-1/2 text-blue-600 w-5 h-5' />
-                <Select defaultValue='date' className='text-black'>
-                  <SelectTrigger
-                    id='date-range'
-                    className='w-full min-w-[160px] pl-10'
-                  />
-                  <SelectContent>
-                    <SelectItem value='date'>Date Range</SelectItem>
-                    <SelectItem value='newest'>Newest</SelectItem>
-                    <SelectItem value='oldest'>Oldest</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
-            <div className='w-full sm:w-auto min-w-[160px] flex flex-col'>
-              <div className='relative flex items-center'>
-                <FiLayers className='absolute left-3 top-1/2 -translate-y-1/2 text-blue-600 w-5 h-5' />
-                <Select defaultValue='all'>
-                  <SelectTrigger
-                    id='series'
-                    className='w-full min-w-[160px] pl-10'
-                  />
-                  <SelectContent>
-                    <SelectItem value='all'>All Series</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
-            <div className='w-full sm:w-auto min-w-[160px] flex flex-col'>
-              <div className='relative flex items-center'>
-                <FiUsers className='absolute left-3 top-1/2 -translate-y-1/2 text-blue-600 w-5 h-5' />
-                <Select defaultValue='all'>
-                  <SelectTrigger
-                    id='speakers'
-                    className='w-full min-w-[160px] pl-10'
-                  />
-                  <SelectContent>
-                    <SelectItem value='all'>All Speakers</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* Messages Grid */}
-        <div className='space-y-12 mb-12'>
-          {months.map((month) => {
-            const monthMessages = messages.filter((msg) =>
-              msg.date.includes(month.split(" ")[0])
-            );
-            return (
-              <div key={month}>
-                <h2 className='text-xl font-semibold text-black mb-4'>
-                  {month} ({monthMessages.length})
-                </h2>
-                <div className='border-t border-black my-4' />
-                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
-                  {monthMessages.map((message) => (
-                    <div
-                      className='bg-[#eaf3ff] rounded-lg p-3 sm:p-4 md:p-6 m-1 sm:m-2 md:m-4'
-                      key={message.id}>
-                      <div className='relative'>
-                        <Image
-                          src='/messages-img.png'
-                          alt='Message Image 1'
-                          className='mb-4 w-full h-auto'
-                          width={400}
-                          height={200}
-                        />
-                        <div className='absolute inset-0 flex items-center justify-center'>
-                          <a
-                            href='https://www.youtube.com'
-                            target='_blank'
-                            rel='noopener noreferrer'>
-                            <Image
-                              src='/yt-logo-icon.svg'
-                              alt='YouTube Play Icon'
-                              className='w-8 h-8 sm:w-10 sm:h-10 md:w-15 md:h-15 text-white'
-                              width={50}
-                              height={50}
-                            />
-                          </a>
-                        </div>
+    <main className='min-h-screen bg-[#F8FAFC] w-full pt-[100px] sm:pt-[140px] pb-20'>
+      {/* Background patterns */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-100/50 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-cyan-50/50 rounded-full blur-[120px]" />
+      </div>
+
+      <div className='container mx-auto px-4 relative z-10 mt-[80px]'>
+        {/* Header Section */}
+        <motion.div 
+          initial="hidden"
+          animate="visible"
+          variants={fadeInUp}
+          className='mb-12 text-center max-w-3xl mx-auto'
+        >
+          <h1 className='text-4xl sm:text-6xl font-extrabold text-[#0F172A] mb-4 tracking-tight'>
+            Our <span>Messages</span>
+          </h1>
+          <p className='text-lg text-slate-600'>
+            Explore our library of life-changing messages and dive deeper into God's word.
+          </p>
+        </motion.div>
+
+        {loading ? (
+             <div className="flex flex-col items-center justify-center py-20 gap-4">
+                <FiLoader className="text-4xl text-blue-600 animate-spin" />
+                <p className="text-slate-500 font-medium">Fetching messages...</p>
+             </div>
+        ) : (
+          <>
+            {/* Featured Message Section */}
+            {featuredMessage && (
+              <motion.div 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+                className="mb-16"
+              >
+                <div className="bg-white rounded-3xl overflow-hidden shadow-xl shadow-blue-500/5 border border-slate-100 flex flex-col lg:flex-row items-stretch">
+                  <div className="lg:w-3/5 relative aspect-video cursor-pointer group">
+                      <Image
+                        src={featuredMessage.thumbnail}
+                        alt={featuredMessage.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-blue-600 rounded-full flex items-center justify-center shadow-2xl scale-90 group-hover:scale-100 transition-transform duration-300">
+                              <FiPlay className="text-white text-3xl sm:text-4xl ml-1" />
+                          </div>
                       </div>
-                      <h3 className='text-base sm:text-lg md:text-xl font-semibold mb-2 text-gray-700'>
-                        {message.title}
-                      </h3>
-                      <p className='text-gray-700 text-sm sm:text-base md:text-lg'>
-                        Kindly subscribe to our YouTube channel.
-                      </p>
-                      <p className='text-gray-500 text-xs sm:text-sm md:text-base'>
-                        {message.date}
-                      </p>
-                    </div>
-                  ))}
+                      <div className="absolute top-4 left-4">
+                          <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Latest Message</span>
+                      </div>
+                  </div>
+                  <div className="lg:w-2/5 p-8 sm:p-12 flex flex-col justify-center">
+                      <div className="flex items-center gap-2 text-blue-600 font-semibold mb-3">
+                          <FiLayers />
+                          <span className="text-sm uppercase tracking-widest">{featuredMessage.series}</span>
+                      </div>
+                      <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 leading-tight">
+                          {featuredMessage.title}
+                      </h2>
+                      <div className="flex flex-col gap-2 mb-8 text-slate-500">
+                          <div className="flex items-center gap-2 text-sm">
+                              <FiUsers className="text-blue-500" />
+                              <span>{featuredMessage.speaker}</span>
+                          </div>
+                          <div className="flex items-center gap-2 text-sm">
+                              <FiCalendar className="text-blue-500" />
+                              <span>{featuredMessage.date}</span>
+                          </div>
+                      </div>
+                      <a 
+                        href={`https://youtube.com/watch?v=${featuredMessage.id}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-4 sm:py-5 bg-[#006CFF] text-white rounded-md font-medium transition-all duration-300 group">
+                          Watch Full Message
+                          <BsArrowRight className="group-hover:translate-x-1 transition-transform" />
+                      </a>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              </motion.div>
+            )}
+
+            {/* Filter Section - Glass Design */}
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="sticky top-[130px] z-30 mb-12"
+            >
+                <div className='bg-white/90 backdrop-blur-md border border-white/20 shadow-xl shadow-slate-200/60 rounded-2xl p-3 sm:p-5'>
+                    <div className='flex flex-col xl:flex-row gap-4 xl:gap-6 items-stretch xl:items-center'>
+                        {/* Search & Toggle Row */}
+                        <div className='flex gap-3 w-full xl:flex-1'>
+                            <div className='flex-1 relative'>
+                                <FiSearch className='absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5' />
+                                <Input
+                                placeholder='Search for keywords...'
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                                className='w-full border-none bg-slate-100/70 focus:bg-white focus:ring-2 focus:ring-blue-500/20 rounded-md pl-12 h-12 text-slate-900 placeholder:text-slate-400'
+                                />
+                            </div>
+                            <button 
+                                onClick={() => setIsFilterOpen(!isFilterOpen)}
+                                className='xl:hidden flex items-center justify-center gap-2 bg-blue-600 text-white px-4 rounded-md h-12 font-medium shadow-lg shadow-blue-500/20 active:scale-95 transition-all'
+                            >
+                                <FiFilter className="text-lg" />
+                                <span className="text-sm hidden sm:inline">{isFilterOpen ? 'Close' : 'Filter'}</span>
+                                {isFilterOpen ? <FiChevronUp /> : <FiChevronDown />}
+                            </button>
+                        </div>
+                        
+                        {/* Collapsible Selects */}
+                        <AnimatePresence>
+                            {(isFilterOpen) && (
+                                <motion.div 
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{ height: 'auto', opacity: 1 }}
+                                    exit={{ height: 0, opacity: 0 }}
+                                    className="flex flex-col sm:grid sm:grid-cols-3 gap-3 w-full xl:hidden overflow-hidden pt-1"
+                                >
+                                    <Select defaultValue='date'>
+                                        <SelectTrigger className='border-none bg-slate-100/70 rounded-md h-12 px-4'>
+                                            <div className="flex items-center gap-2">
+                                                <FiCalendar className="text-blue-600" />
+                                                <SelectValue placeholder="Date" />
+                                            </div>
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectItem value='date'>Date Range</SelectItem>
+                                            <SelectItem value='newest'>Newest</SelectItem>
+                                            <SelectItem value='oldest'>Oldest</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+
+                                    <Select defaultValue='all'>
+                                        <SelectTrigger className='border-none bg-slate-100/70 rounded-md h-12 px-4'>
+                                            <div className="flex items-center gap-2">
+                                                <FiLayers className="text-blue-600" />
+                                                <SelectValue placeholder="Series" />
+                                            </div>
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectItem value='all'>All Series</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+
+                                    <Select defaultValue='all'>
+                                        <SelectTrigger className='border-none bg-slate-100/70 rounded-md h-12 px-4'>
+                                            <div className="flex items-center gap-2">
+                                                <FiUsers className="text-blue-600" />
+                                                <SelectValue placeholder="Speakers" />
+                                            </div>
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectItem value='all'>All Speakers</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+
+                        {/* Desktop Selects */}
+                        <div className='hidden xl:flex gap-4 w-auto'>
+                            <div className="flex flex-col min-w-[150px]">
+                                <Select defaultValue='date'>
+                                    <SelectTrigger className='border-none bg-slate-100/70 rounded-md h-12 px-4 focus:ring-2 focus:ring-blue-500/20'>
+                                        <div className="flex items-center gap-2">
+                                            <FiCalendar className="text-blue-600" />
+                                            <SelectValue placeholder="Date Range" />
+                                        </div>
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectItem value='date'>Date Range</SelectItem>
+                                        <SelectItem value='newest'>Newest</SelectItem>
+                                        <SelectItem value='oldest'>Oldest</SelectItem>
+                                    </SelectContent>
+                                </Select>
+                            </div>
+
+                            <div className="flex flex-col min-w-[150px]">
+                                <Select defaultValue='all'>
+                                    <SelectTrigger className='border-none bg-slate-100/70 rounded-md h-12 px-4 focus:ring-2 focus:ring-blue-500/20'>
+                                        <div className="flex items-center gap-2">
+                                            <FiLayers className="text-blue-600" />
+                                            <SelectValue placeholder="All Series" />
+                                        </div>
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectItem value='all'>All Series</SelectItem>
+                                    </SelectContent>
+                                </Select>
+                            </div>
+
+                            <div className="flex flex-col min-w-[150px]">
+                                <Select defaultValue='all'>
+                                    <SelectTrigger className='border-none bg-slate-100/70 rounded-md h-12 px-4 focus:ring-2 focus:ring-blue-500/20'>
+                                        <div className="flex items-center gap-2">
+                                            <FiUsers className="text-blue-600" />
+                                            <SelectValue placeholder="All Speakers" />
+                                        </div>
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectItem value='all'>All Speakers</SelectItem>
+                                    </SelectContent>
+                                </Select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </motion.div>
+
+            {/* Messages Grid */}
+            <div className='space-y-16'>
+            {Object.entries(groupedVideos).map(([groupKey, groupVideos]) => (
+                <motion.div 
+                    key={groupKey}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    variants={stagger}
+                >
+                    <div className="flex items-center gap-4 mb-8">
+                        <h2 className='text-xl sm:text-2xl font-bold text-slate-800 whitespace-nowrap uppercase tracking-wide'>
+                            {groupKey}
+                        </h2>
+                        <div className='h-px bg-slate-200 w-full' />
+                        <span className="text-slate-400 font-medium whitespace-nowrap">{groupVideos.length} Messages</span>
+                    </div>
+
+                    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'>
+                    {groupVideos.map((video) => (
+                        <motion.div
+                        variants={fadeInUp}
+                        whileHover={{ y: -10 }}
+                        className='bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group border border-slate-100'
+                        key={video.id}>
+                        <div className='relative aspect-video overflow-hidden'>
+                            <Image
+                            src={video.thumbnail}
+                            alt='Message Thumbnail'
+                            fill
+                            className='object-cover transition-transform duration-700 group-hover:scale-110'
+                            unoptimized={video.thumbnail.startsWith('http')}
+                            />
+                            <div className='absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center'>
+                            <div className='w-12 h-12 bg-white rounded-full flex items-center justify-center scale-0 group-hover:scale-100 transition-transform duration-300 shadow-xl'>
+                                <FiPlay className="text-blue-600 text-xl ml-0.5" />
+                            </div>
+                            </div>
+                            <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span className="bg-white/90 backdrop-blur-sm text-blue-600 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-tighter">Youtube</span>
+                            </div>
+                        </div>
+                        
+                        <div className="p-6">
+                            <div className="flex items-center gap-2 text-blue-500 text-xs font-bold uppercase tracking-wider mb-2">
+                                <span>{video.series}</span>
+                            </div>
+                            <h3 className='text-lg sm:text-xl font-bold text-slate-800 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2'>
+                                {video.title}
+                            </h3>
+                            <div className="flex flex-col gap-1 text-slate-500 text-sm mb-6">
+                                <div className="flex items-center gap-1.5">
+                                    <FiUsers className="w-3.5 h-3.5" />
+                                    <span>{video.speaker}</span>
+                                </div>
+                                <div className="flex items-center gap-1.5">
+                                    <FiCalendar className="w-3.5 h-3.5" />
+                                    <span>{video.date}</span>
+                                </div>
+                            </div>
+                            
+                            <a
+                            href={`https://youtube.com/watch?v=${video.id}`}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className="flex items-center justify-between text-blue-600 font-semibold group/link"
+                            >
+                            <span className="text-sm">Watch Now</span>
+                            <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center group-hover/link:bg-blue-600 group-hover/link:text-white transition-colors">
+                                <BsArrowRight />
+                            </div>
+                            </a>
+                        </div>
+                        </motion.div>
+                    ))}
+                    </div>
+                </motion.div>
+            ))}
+
+            {filteredVideos.length === 0 && (
+                <div className="text-center py-20">
+                    <p className="text-slate-400 text-lg">No messages found matching your search.</p>
+                </div>
+            )}
+            </div>
+          </>
+        )}
       </div>
     </main>
   );

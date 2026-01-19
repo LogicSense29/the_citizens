@@ -16,7 +16,7 @@ function GivePageContent() {
         }}>
         {/* Hero Content */}
         <div className='container mx-auto min-h-screen relative z-20 flex flex-col items-center justify-center w-full pt-[180px] pb-8 px-4 sm:px-6'>
-          <h1 className='leading-none text-4xl sm:text-6xl md:text-8xl text-white font-semibold mb-4 text-center max-w-4xl'>
+          <h1 className='leading-none text-4xl sm:text-6xl md:text-7xl text-white font-semibold mb-4 text-center max-w-4xl'>
             Become a Kingdom Partner
           </h1>
           <p className='text-base sm:text-lg text-white mb-6 text-center max-w-2xl'>
@@ -26,11 +26,11 @@ function GivePageContent() {
           </p>
           {/* hero buttons or actions */}
           <div className='flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 w-full'>
-            <button className='w-full sm:w-auto px-6 py-4 sm:py-5 bg-[#006CFF] flex items-center justify-center gap-2 rounded'>
+            <button className='w-full sm:w-auto px-6 py-4 sm:py-5 bg-[#006CFF] flex items-center justify-center gap-2 rounded-md'>
               <p className='text-base sm:text-xl'>View Projects</p>
               <BsArrowRight className='text-white text-2xl sm:text-3xl' />
             </button>
-            <button className='w-full sm:w-auto px-6 py-4 sm:py-5 bg-[#0E0E0E] flex items-center justify-center gap-2 rounded'>
+            <button className='w-full sm:w-auto px-6 py-4 sm:py-5 bg-[#0E0E0E] flex items-center justify-center gap-2 rounded-md'>
               <p className='text-base sm:text-xl'>Give to Mission</p>
             </button>
           </div>
@@ -81,7 +81,7 @@ function GivePageContent() {
               </div>
             </div>
           </div>
-          <button className='sm:w-auto px-6 py-4 sm:py-5 bg-[#006CFF] flex items-center justify-center gap-2 rounded text-center mx-auto mt-6'>
+          <button className='sm:w-auto px-6 py-4 sm:py-5 bg-[#006CFF] flex items-center justify-center gap-2 rounded-md text-center mx-auto mt-6'>
             <p className='text-base sm:text-xl text-white'>Contact Us</p>
           </button>
         </div>

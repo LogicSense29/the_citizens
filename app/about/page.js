@@ -41,7 +41,7 @@ function About() {
                 <p className='text-base sm:text-xl'>Books</p>
               </button> */}
 
-              <button className='w-full px-6 py-4 sm:py-5 flex items-center justify-center gap-2 rounded border border-white'>
+              <button className='w-full px-6 py-4 sm:py-5 flex items-center justify-center gap-2 rounded-md border border-white'>
                 <p className='text-base sm:text-xl'>Message</p>
               </button>
             </div>
@@ -84,13 +84,15 @@ function About() {
               </p>
 
               <div className='w-full flex justify-center gap-4'>
-                <button className='w-full px-6 py-4 sm:py-5 flex items-center justify-center gap-2 rounded border border-[#0A0D11]'>
+                <button className='w-full px-6 py-4 sm:py-5 flex items-center justify-center gap-2 rounded-md border border-[#0A0D11]'>
                   <p className='text-base sm:text-xl'>Books</p>
                 </button>
 
-                <button className='w-full px-6 py-4 sm:py-5 flex items-center justify-center gap-2 rounded border border-[#0A0D11]'>
-                  <p className='text-base sm:text-xl'>Message</p>
-                </button>
+                <Link 
+                  href="/nike-oladeru"
+                  className='w-full px-6 py-4 sm:py-5 flex items-center justify-center gap-2 rounded-md border border-[#0A0D11] hover:bg-[#0A0D11] hover:text-white transition-all'>
+                  <p className='text-base sm:text-xl'>Full Profile</p>
+                </Link>
               </div>
             </div>
           </div>
