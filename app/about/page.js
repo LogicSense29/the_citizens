@@ -1,10 +1,13 @@
 'use client'
+import Image from 'next/image';
+import Link from 'next/link';
+
 
 function About() {
   return (
     <section className='relative min-h-screen bg-[#0A0D11]'>
       <div className='absolute left-0 top-0 text-accent w-1/2 h-screen'>
-        <img src='about-gradient.svg' alt='Gradient' />
+        <Image src='/about-gradient.svg' alt='Gradient' width={1000} height={1000} className="w-full h-full object-cover" />
       </div>
       <div className='relative container flex flex-col justify-center pt-[180px] pb-20 '>
         <h2 className='text-accent text-center text-2xl sm:text-4xl font-bold mb-8'>
@@ -13,9 +16,11 @@ function About() {
         <div className='flex flex-col lg:flex-row justify-center gap-12 lg:gap-8 h-auto'>
           {/* IMAGE */}
           <div className='flex-1 flex'>
-            <img
-              src='pastor-rectangle.svg'
+            <Image
+              src='/pastor-rectangle.svg'
               alt='Picture of Yinka Oladeru'
+              width={600}
+              height={500}
               className='w-full h-full max-h-[500px] object-cover rounded-[34px]'
             />
           </div>
@@ -57,13 +62,14 @@ function About() {
           </h2>
           <div className='flex flex-col lg:flex-row justify-center gap-12 lg:gap-8 h-auto'>
             {/* IMAGE */}
-            <div className='flex-1 flex'>
-              <img
-                src='nike-oladeru.jpg'
-                alt='Picture of Nike Oladeru'
-                className='w-full h-full max-h-[500px] object-cover rounded-[34px]'
-              />
-            </div>
+            <div className='flex-1 lg:mt-[100px] relative h-[400px] lg:h-auto'>
+            <Image
+              src='/pastor-flower.svg'
+              alt='Flower background'
+              fill
+              className='object-contain'
+            />
+          </div>
 
             {/* TEXT */}
             <div className='flex-1 flex flex-col justify-between gap-4'>

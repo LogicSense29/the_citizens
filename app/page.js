@@ -122,8 +122,11 @@ export default function Home() {
           <h2 className='relative z-25 text-black font-bold text-xl sm:text-3xl max-w-3xl'>
             Philippians 3:20
           </h2> */}
-            <img
+            <Image
               src='/top-qoute.svg'
+              alt='Quotation background'
+              width={800}
+              height={200}
               className='object-contain w-full h-auto invisible'
             />
             {/* <div className="z-20">
