@@ -43,6 +43,11 @@ export default function MessagesPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
+  
+  // Filter States
+  const [sortBy, setSortBy] = useState("newest");
+  const [seriesFilter, setSeriesFilter] = useState("all");
+  const [speakerFilter, setSpeakerFilter] = useState("all");
 
   useEffect(() => {
     async function loadVideos() {
@@ -67,19 +72,48 @@ export default function MessagesPage() {
     loadVideos();
   }, []);
 
-  const filteredVideos = useMemo(() => {
-    return videos.filter(v => 
-      v.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      v.description?.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-  }, [videos, searchQuery]);
+  // Extract unique series and speakers for dropdowns
+  const seriesOptions = useMemo(() => {
+    const series = new Set(videos.map(v => v.series).filter(Boolean));
+    return Array.from(series).sort();
+  }, [videos]);
 
-  const featuredMessage = filteredVideos[0] || videos[0];
+  const speakerOptions = useMemo(() => {
+    const speakers = new Set(videos.map(v => v.speaker).filter(Boolean));
+    return Array.from(speakers).sort();
+  }, [videos]);
+
+  const filteredVideos = useMemo(() => {
+    // Filter out the absolute latest message (index 0) from the archive results
+    // so it doesn't appear twice if it matches a search/filter.
+    const archiveVideos = videos.slice(1);
+    
+    let result = archiveVideos.filter(v => {
+      const matchesSearch = v.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                            v.description?.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesSeries = seriesFilter === "all" || v.series === seriesFilter;
+      const matchesSpeaker = speakerFilter === "all" || v.speaker === speakerFilter;
+      
+      return matchesSearch && matchesSeries && matchesSpeaker;
+    });
+
+    // Apply Sorting
+    result.sort((a, b) => {
+      const dateA = new Date(a.rawDate || a.date).getTime();
+      const dateB = new Date(b.rawDate || b.date).getTime();
+      return sortBy === "newest" ? dateB - dateA : dateA - dateB;
+    });
+
+    return result;
+  }, [videos, searchQuery, seriesFilter, speakerFilter, sortBy]);
+
+  const featuredMessage = videos[0];
 
   // Group videos by month
   const groupedVideos = useMemo(() => {
     const groups = {};
-    filteredVideos.slice(1).forEach(video => {
+    
+    filteredVideos.forEach(video => {
         // Extract month and year from "12 March 2025"
         const parts = video.date.split(" ");
         const key = parts.length >= 3 ? `${parts[1]} ${parts[2]}` : "Recent Messages";
@@ -217,21 +251,20 @@ export default function MessagesPage() {
                                     exit={{ height: 0, opacity: 0 }}
                                     className="flex flex-col sm:grid sm:grid-cols-3 gap-3 w-full xl:hidden overflow-hidden pt-1"
                                 >
-                                    <Select defaultValue='date'>
+                                    <Select value={sortBy} onValueChange={setSortBy}>
                                         <SelectTrigger className='border-none bg-slate-100/70 rounded-md h-12 px-4'>
                                             <div className="flex items-center gap-2">
                                                 <FiCalendar className="text-blue-600" />
-                                                <SelectValue placeholder="Date" />
+                                                <SelectValue placeholder="Sort By" />
                                             </div>
                                         </SelectTrigger>
                                         <SelectContent>
-                                            <SelectItem value='date'>Date Range</SelectItem>
                                             <SelectItem value='newest'>Newest</SelectItem>
                                             <SelectItem value='oldest'>Oldest</SelectItem>
                                         </SelectContent>
                                     </Select>
 
-                                    <Select defaultValue='all'>
+                                    <Select value={seriesFilter} onValueChange={setSeriesFilter}>
                                         <SelectTrigger className='border-none bg-slate-100/70 rounded-md h-12 px-4'>
                                             <div className="flex items-center gap-2">
                                                 <FiLayers className="text-blue-600" />
@@ -240,10 +273,13 @@ export default function MessagesPage() {
                                         </SelectTrigger>
                                         <SelectContent>
                                             <SelectItem value='all'>All Series</SelectItem>
+                                            {seriesOptions.map(opt => (
+                                              <SelectItem key={opt} value={opt}>{opt}</SelectItem>
+                                            ))}
                                         </SelectContent>
                                     </Select>
 
-                                    <Select defaultValue='all'>
+                                    <Select value={speakerFilter} onValueChange={setSpeakerFilter}>
                                         <SelectTrigger className='border-none bg-slate-100/70 rounded-md h-12 px-4'>
                                             <div className="flex items-center gap-2">
                                                 <FiUsers className="text-blue-600" />
@@ -252,6 +288,9 @@ export default function MessagesPage() {
                                         </SelectTrigger>
                                         <SelectContent>
                                             <SelectItem value='all'>All Speakers</SelectItem>
+                                            {speakerOptions.map(opt => (
+                                              <SelectItem key={opt} value={opt}>{opt}</SelectItem>
+                                            ))}
                                         </SelectContent>
                                     </Select>
                                 </motion.div>
@@ -261,15 +300,14 @@ export default function MessagesPage() {
                         {/* Desktop Selects */}
                         <div className='hidden xl:flex gap-4 w-auto'>
                             <div className="flex flex-col min-w-[150px]">
-                                <Select defaultValue='date'>
+                                <Select value={sortBy} onValueChange={setSortBy}>
                                     <SelectTrigger className='border-none bg-slate-100/70 rounded-md h-12 px-4 focus:ring-2 focus:ring-blue-500/20'>
                                         <div className="flex items-center gap-2">
                                             <FiCalendar className="text-blue-600" />
-                                            <SelectValue placeholder="Date Range" />
+                                            <SelectValue placeholder="Sort By" />
                                         </div>
                                     </SelectTrigger>
                                     <SelectContent>
-                                        <SelectItem value='date'>Date Range</SelectItem>
                                         <SelectItem value='newest'>Newest</SelectItem>
                                         <SelectItem value='oldest'>Oldest</SelectItem>
                                     </SelectContent>
@@ -277,7 +315,7 @@ export default function MessagesPage() {
                             </div>
 
                             <div className="flex flex-col min-w-[150px]">
-                                <Select defaultValue='all'>
+                                <Select value={seriesFilter} onValueChange={setSeriesFilter}>
                                     <SelectTrigger className='border-none bg-slate-100/70 rounded-md h-12 px-4 focus:ring-2 focus:ring-blue-500/20'>
                                         <div className="flex items-center gap-2">
                                             <FiLayers className="text-blue-600" />
@@ -286,12 +324,15 @@ export default function MessagesPage() {
                                     </SelectTrigger>
                                     <SelectContent>
                                         <SelectItem value='all'>All Series</SelectItem>
+                                        {seriesOptions.map(opt => (
+                                          <SelectItem key={opt} value={opt}>{opt}</SelectItem>
+                                        ))}
                                     </SelectContent>
                                 </Select>
                             </div>
 
                             <div className="flex flex-col min-w-[150px]">
-                                <Select defaultValue='all'>
+                                <Select value={speakerFilter} onValueChange={setSpeakerFilter}>
                                     <SelectTrigger className='border-none bg-slate-100/70 rounded-md h-12 px-4 focus:ring-2 focus:ring-blue-500/20'>
                                         <div className="flex items-center gap-2">
                                             <FiUsers className="text-blue-600" />
@@ -300,6 +341,9 @@ export default function MessagesPage() {
                                     </SelectTrigger>
                                     <SelectContent>
                                         <SelectItem value='all'>All Speakers</SelectItem>
+                                        {speakerOptions.map(opt => (
+                                          <SelectItem key={opt} value={opt}>{opt}</SelectItem>
+                                        ))}
                                     </SelectContent>
                                 </Select>
                             </div>
