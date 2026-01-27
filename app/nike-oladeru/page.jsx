@@ -139,7 +139,7 @@ export default function NikeOladeruPage() {
                         
                         <div className="space-y-6 text-lg text-gray-300 leading-relaxed font-light">
                             <p>
-                                Pastor Nike Oladeru is a dynamic worship leader and songwriter whose ministry is defined by a deep hunger for the presence of God. Married to Pastor Yinka Oladeru since 2012, they have been a powerful team in ministry, serving together with a shared vision for global transformation.
+                                Nike Oladeru is a dynamic worship leader and songwriter whose ministry is defined by a deep hunger for the presence of God. Married to Yinka Oladeru since 2012, they have been a powerful team in ministry, serving together with a shared vision for transformation.
                             </p>
                             <p>
                                 An alumna of Rhema Bible Training College, Nike's songs have become anthems of revival in the body of Christ. Her music is not just performance; it is a portal for believers to encounter the living God. From "The Experience" to local gatherings, her voice carries a weight of authority and grace.

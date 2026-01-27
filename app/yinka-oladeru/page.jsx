@@ -130,18 +130,18 @@ export default function YinkaOladeruPage() {
                         <BsQuote className="absolute top-10 right-10 text-6xl text-blue-600/20" />
                         
                         <h2 className="text-3xl md:text-5xl font-bold mb-10 border-l-4 border-blue-600 pl-6">
-                            A Vision for <br /> Global Transformation
+                            A Vision for <br /> Transformation
                         </h2>
                         
                         <div className="space-y-6 text-lg text-gray-300 leading-relaxed font-light">
                             <p>
-                                Pastor Yinka Oladeru is a passionate lover of God whose sole drive is to see a generation of young people consumed with hunger for more of Jesus. He consistently desires and pursues a deeper walk with the Holy Spirit, which is the inspiration for his relentless drive to invest time in communion and prayer.
+                                Yinka Oladeru is a passionate lover of God whose sole drive is to see a generation of young people consumed with hunger for more of Jesus. He consistently desires and pursues a deeper walk with the Holy Spirit, which is the inspiration for his relentless drive to invest time in communion and prayer.
                             </p>
                             <p>
-                                Married to Pastor Nike Oladeru since 2012, they have been a powerful team in ministry, serving together with a shared vision for global transformation. Both alumni of the prestigious Rhema Bible Training College, they have been equipped with a strong foundation in ministry.
+                                Married to Nike Oladeru since 2012, they have been a powerful team in ministry, serving together with a shared vision for transformation. Both alumni of the Rhema Bible Training College, they have been equipped with a strong foundation in ministry.
                             </p>
                             <p>
-                                With a wealth of ministerial experience, Pastor Yinka has served in various capacities, bringing a unique blend of spiritual depth and practical leadership. He is a devoted father to Niyi and Wura, balancing his calling with a deep commitment to family.
+                                With a wealth of ministerial experience, Yinka has served in various capacities, bringing a unique blend of spiritual depth and practical leadership. He is a devoted father to two beautiful children, balancing his calling with a deep commitment to family.
                             </p>
                         </div>
                     </motion.div>

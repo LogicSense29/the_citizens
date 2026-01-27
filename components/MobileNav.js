@@ -68,7 +68,7 @@ export default function MobileNav() {
                 </SheetClose>
               ) : (
                 <>
-                  <p className="text-zinc-600 dark:text-zinc-400 font-semibold uppercase text-xs tracking-widest mt-2">
+                  <p className="text-zinc-600 dark:text-zinc-400 font-semibold text-lg tracking-widest mt-2">
                     {link.label}
                   </p>
                   <div className="flex flex-col gap-2 pl-4 border-l border-zinc-800">

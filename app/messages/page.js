@@ -12,7 +12,7 @@ import { BsYoutube, BsArrowRight } from "react-icons/bs";
 import { FiCalendar, FiLayers, FiSearch, FiUsers, FiPlay, FiFilter, FiChevronDown, FiChevronUp, FiLoader } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useMemo } from "react";
-import { fetchYoutubeVideos } from "@/lib/youtube";
+import { getYoutubeVideosServer } from "@/lib/youtube-server";
 
 // Fallback Mock Data
 const fallbackMonths = ["March 2025", "February 2025", "January 2025"];
@@ -48,7 +48,7 @@ export default function MessagesPage() {
     async function loadVideos() {
       setLoading(true);
       try {
-        const data = await fetchYoutubeVideos();
+        const data = await getYoutubeVideosServer();
         if (data && data.length > 0) {
           setVideos(data);
         } else {
@@ -57,6 +57,7 @@ export default function MessagesPage() {
           setVideos(fallbackMessages);
         }
       } catch (err) {
+        console.error("Error in loadVideos:", err);
         setError("Could not load latest messages.");
         setVideos(fallbackMessages);
       } finally {
