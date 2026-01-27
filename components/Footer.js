@@ -23,12 +23,12 @@ export default function Footer() {
                 height={100}
               />
             </Link>
-            <p className=''>
+            <p className='text-center md:text-left'>
               Whether you are dealing with challenges, have prayer requests,
               need guidance, or just want to connect, we are here and eager to
               help with it.
             </p>
-            <h3 className="font-semibold">No 7 Farayola street, Bodija, Ibadan.</h3>
+            <h3 className="font-semibold">Harmony Lane, Lagos, Nigeria.</h3>
           </div>
         
           {/* Navigation Section */}

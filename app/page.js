@@ -461,7 +461,7 @@ export default function Home() {
               <div className='flex flex-col md:flex-row gap-4 md:gap-16 justify-center md:justify-start pt-4'>
                 <Link
                   className='w-full sm:w-[200px] px-6 py-4 sm:py-5 bg-transparent border border-white/20 flex items-center justify-center gap-2 rounded-md hover:bg-[#006CFF] hover:border-[#006CFF] transition-all duration-300 group'
-                  href='/nike-oladeru'>
+                  href='/about'>
                   <p className='text-base sm:text-xl text-white'>Read bio</p>
                 </Link>
 

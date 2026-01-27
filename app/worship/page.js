@@ -163,13 +163,13 @@ export default function WorshipPage() {
                className='lg:w-1/2 w-full order-2 lg:order-1'
             >
               <div className="inline-block bg-blue-50 text-blue-600 text-sm font-bold px-4 py-2 rounded-full mb-6 uppercase tracking-widest">
-                 Thursday Mid-Week
+                 Tuesday Prayer School
               </div>
               <h2 className='text-[#0F172A] text-4xl sm:text-5xl font-bold mb-6'>
                 Weekly Prayer <span className="text-blue-600">&</span> Word
               </h2>
               <p className='text-slate-600 text-lg sm:text-xl leading-relaxed mb-10 max-w-lg'>
-                Fuel your spiritual fire mid-week. Every Thursday, we gather to intercede and dive deeper into revelations.
+                Fuel your spiritual fire weekly. Every Tuesday, we gather to intercede and dive deeper into revelations.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-8 mb-10">

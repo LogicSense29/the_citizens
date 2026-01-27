@@ -134,7 +134,8 @@ export default function MessagesPage() {
                         src={featuredMessage.thumbnail}
                         alt={featuredMessage.title}
                         fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="object-cover object-bottom transition-transform duration-700 group-hover:scale-105"
+                        unoptimized={featuredMessage.thumbnail.startsWith('http')}
                       />
                       <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors flex items-center justify-center">
                           <div className="w-16 h-16 sm:w-20 sm:h-20 bg-blue-600 rounded-full flex items-center justify-center shadow-2xl scale-90 group-hover:scale-100 transition-transform duration-300">

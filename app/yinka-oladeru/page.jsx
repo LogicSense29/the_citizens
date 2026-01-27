@@ -6,17 +6,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { BsInstagram, BsTwitter, BsFacebook, BsYoutube, BsSpotify, BsMusicNoteBeamed, BsArrowRight, BsQuote } from "react-icons/bs";
 
 const socialLinks = [
-  { icon: <BsInstagram />, href: "https://instagram.com", label: "Instagram" },
-  { icon: <BsTwitter />, href: "https://twitter.com", label: "Twitter" },
-  { icon: <BsFacebook />, href: "https://facebook.com", label: "Facebook" },
-  { icon: <BsYoutube />, href: "https://youtube.com", label: "YouTube" },
+  { icon: <BsInstagram />, href: "#", label: "Instagram" },
+  { icon: <BsTwitter />, href: "#", label: "Twitter" },
+  { icon: <BsFacebook />, href: "#", label: "Facebook" },
+  { icon: <BsYoutube />, href: "#", label: "YouTube" },
 ];
 
 const galleryImages = [
-  "/nike-oladeru.jpg",
-  "/pastor-nike.jpg",
-  "/sings-citizens.jpg",
-  "/hero-pastor.jpg",
+  "/oladeru-b.jpg",
+  "/pastor-rectangle.svg",
+  "/home-1.jpg",
+  "/oladeru.jpg",
 ];
 
 const fadeInUp = {
@@ -28,7 +28,7 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.2 } }
 };
 
-export default function NikeOladeruPage() {
+export default function YinkaOladeruPage() {
   return (
     <main className="bg-[#0A0D11] min-h-screen text-white overflow-hidden">
         
@@ -36,7 +36,7 @@ export default function NikeOladeruPage() {
         <section className="relative min-h-screen flex items-center justify-center pt-24">
             <div className="absolute inset-0 z-0">
                 <Image 
-                    src="/pastor-nike.jpg" 
+                    src="/oladeru-b.jpg" 
                     alt="Background" 
                     fill 
                     className="object-cover opacity-30 scale-105"
@@ -57,8 +57,8 @@ export default function NikeOladeruPage() {
                         <div className="absolute inset-0 bg-blue-600/20 translate-x-4 translate-y-4 rounded-3xl -z-10 blur-2xl" />
                         <div className="relative aspect-[4/4] w-full max-w-md mx-auto rounded-[40px] overflow-hidden border border-white/10 shadow-2xl -rotate-2">
                             <Image 
-                                src="/nike-oladeru.jpg" 
-                                alt="Nike Oladeru" 
+                                src="/oladeru-b.jpg" 
+                                alt="Yinka Oladeru" 
                                 fill 
                                 className="object-cover"
                                 priority
@@ -74,23 +74,19 @@ export default function NikeOladeruPage() {
                         className="lg:w-1/2 text-center lg:text-left"
                     >
                         <motion.div variants={fadeInUp} className="inline-flex items-center gap-2  py-2 rounded-full mb-6">
-                            {/* <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" /> */}
-                            <span className="text-blue-400 text-xs font-bold uppercase tracking-widest">Worship Leader & Pastor</span>
+                            <span className="text-blue-400 text-xs font-bold uppercase tracking-widest">Lead Pastor</span>
                         </motion.div>
                         
                         <motion.h1 variants={fadeInUp} className="text-5xl md:text-8xl font-black mb-6 leading-tight">
-                            Nike <br />
+                            Yinka <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Oladeru</span>
                         </motion.h1>
                         
                         <motion.p variants={fadeInUp} className="text-xl text-gray-400 max-w-xl mb-10 leading-relaxed font-light">
-                            A voice that transcends melodies, bringing heaven closer through spirit-led worship and deep biblical insight.
+                            A dynamic leader and passionate teacher of the Word, dedicated to raising a generation consumed with hunger for Jesus.
                         </motion.p>
 
                         <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                            {/* <Link href="#ministry" className="px-8 py-4 bg-white text-black font-bold rounded-md hover:bg-blue-500 hover:text-white transition-all shadow-xl">
-                                Read Her Story
-                            </Link> */}
                             <div className="flex gap-4 justify-center md:justify-left">
                                 {socialLinks.map((social, index) => (
                                     <a 
@@ -134,18 +130,18 @@ export default function NikeOladeruPage() {
                         <BsQuote className="absolute top-10 right-10 text-6xl text-blue-600/20" />
                         
                         <h2 className="text-3xl md:text-5xl font-bold mb-10 border-l-4 border-blue-600 pl-6">
-                            The Heartbeat of <br /> her Ministry
+                            A Vision for <br /> Global Transformation
                         </h2>
                         
                         <div className="space-y-6 text-lg text-gray-300 leading-relaxed font-light">
                             <p>
-                                Pastor Nike Oladeru is a dynamic worship leader and songwriter whose ministry is defined by a deep hunger for the presence of God. Married to Pastor Yinka Oladeru since 2012, they have been a powerful team in ministry, serving together with a shared vision for global transformation.
+                                Pastor Yinka Oladeru is a passionate lover of God whose sole drive is to see a generation of young people consumed with hunger for more of Jesus. He consistently desires and pursues a deeper walk with the Holy Spirit, which is the inspiration for his relentless drive to invest time in communion and prayer.
                             </p>
                             <p>
-                                An alumna of Rhema Bible Training College, Nike's songs have become anthems of revival in the body of Christ. Her music is not just performance; it is a portal for believers to encounter the living God. From "The Experience" to local gatherings, her voice carries a weight of authority and grace.
+                                Married to Pastor Nike Oladeru since 2012, they have been a powerful team in ministry, serving together with a shared vision for global transformation. Both alumni of the prestigious Rhema Bible Training College, they have been equipped with a strong foundation in ministry.
                             </p>
                             <p>
-                                Beyond the stage, she is a devoted mother of two; Niyi and Wura and a mentor to many young worship leaders across the globe. Her life is a testament to the beauty of balancing divine calling with family values.
+                                With a wealth of ministerial experience, Pastor Yinka has served in various capacities, bringing a unique blend of spiritual depth and practical leadership. He is a devoted father to Niyi and Wura, balancing his calling with a deep commitment to family.
                             </p>
                         </div>
                     </motion.div>
@@ -153,7 +149,7 @@ export default function NikeOladeruPage() {
             </div>
         </section>
 
-        {/* Music Section - Spotify Integrated */}
+        {/* Messages Section - Placeholder for now */}
         <section className="py-24 bg-[#0F172A]/50">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col items-center text-center mb-16">
@@ -164,28 +160,26 @@ export default function NikeOladeruPage() {
                         variants={fadeInUp}
                     >
                         <div className="flex items-center justify-center gap-3 text-blue-400 mb-4">
-                            {/* <BsMusicNoteBeamed className="text-2xl" /> */}
-                            <span className="font-bold uppercase tracking-widest text-sm">Discography</span>
+                            <span className="font-bold uppercase tracking-widest text-sm">Teachings</span>
                         </div>
-                        <h2 className="text-4xl md:text-6xl font-bold mb-6">Listen to <span className="text-blue-500">Her</span></h2>
+                        <h2 className="text-4xl md:text-6xl font-bold mb-6">Latest <span className="text-blue-500">Messages</span></h2>
                         <p className="text-gray-400 max-w-xl mx-auto">
-                            Immerse yourself in spontaneous worship and latest releases. Available on all streaming platforms.
+                            Explore powerful insights and biblical teachings that transform lives.
                         </p>
                     </motion.div>
                 </div>
 
-                <div className="max-w-4xl mx-auto shadow-2xl rounded-3xl overflow-hidden border border-white/10 relative group">
-                    <div className="absolute inset-0 bg-blue-600/5 group-hover:bg-blue-600/10 transition-colors pointer-events-none" />
-                    <iframe
-                        src='https://open.spotify.com/embed/artist/0blRm7CgmB26Fv6zZg6A0F?utm_source=generator'
-                        width='100%'
-                        height='380'
-                        frameBorder='0'
-                        allowtransparency='true'
-                        allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
-                        loading='lazy'
-                        className="relative z-10"
-                    />
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {/* Placeholder for YouTube Embeds or Message Cards */}
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-6 h-64 flex items-center justify-center text-gray-500">
+                        Message Content Container
+                    </div>
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-6 h-64 flex items-center justify-center text-gray-500">
+                        Message Content Container
+                    </div>
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-6 h-64 flex items-center justify-center text-gray-500">
+                        Message Content Container
+                    </div>
                 </div>
             </div>
         </section>
@@ -196,7 +190,7 @@ export default function NikeOladeruPage() {
                 <div className="flex justify-between items-end sm:mb-12">
                     <div className="space-y-2">
                         <h2 className="text-3xl md:text-5xl font-bold">Gallery</h2>
-                        <p className="text-gray-500">Moments captured <br className='sm:hidden'/> in ministry</p>
+                        <p className="text-gray-500">Moments from <br className='sm:hidden'/> the Journey</p>
                     </div>
                     <Link href="#top" className="text-blue-500 flex items-center gap-2 hover:gap-4 transition-all">
                         Back to top <BsArrowRight />
@@ -221,7 +215,7 @@ export default function NikeOladeruPage() {
                                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                                <span className="text-sm font-bold tracking-widest uppercase">Nike Oladeru</span>
+                                <span className="text-sm font-bold tracking-widest uppercase">Yinka Oladeru</span>
                             </div>
                         </motion.div>
                     ))}
@@ -245,7 +239,6 @@ const SwipeStack = ({ images }) => {
         setCurrentIndex((prev) => (prev + 1) % images.length);
     };
 
-    // We only show up to 3 cards in the stack for performance and aesthetics
     const stackSize = 3;
     const stack = [];
     for (let i = 0; i < stackSize; i++) {
@@ -256,7 +249,6 @@ const SwipeStack = ({ images }) => {
         <div className="relative w-full h-[600px] flex items-center justify-center px-6">
             <AnimatePresence mode='popLayout'>
                 {stack.reverse().map((imageIndex, i) => {
-                    // i=0 is most back, i=2 is top card when stackSize is 3
                     const position = stackSize - 1 - i;
                     const isTop = position === 0;
                     const src = images[imageIndex];
@@ -272,8 +264,8 @@ const SwipeStack = ({ images }) => {
                             animate={{ 
                                 scale: 1 - position * 0.08, 
                                 opacity: 1 - (position * 0.25), 
-                                y: position * -25, // Shifted up to peek from top
-                                rotate: position * (i % 2 === 0 ? 2 : -2), // Slight random-looking rotation
+                                y: position * -25, 
+                                rotate: position * (i % 2 === 0 ? 2 : -2),
                                 zIndex: 20 - position 
                             }}
                             transition={{ type: "spring", stiffness: 300, damping: 25 }}
@@ -295,7 +287,7 @@ const SwipeStack = ({ images }) => {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent pointer-events-none" />
                             <div className="absolute bottom-8 left-8 pointer-events-none">
-                                <p className="text-white font-black uppercase tracking-[0.2em] text-xs mb-1">Nike Oladeru</p>
+                                <p className="text-white font-black uppercase tracking-[0.2em] text-xs mb-1">Yinka Oladeru</p>
                                 <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest">Swipe to discover</p>
                             </div>
                         </motion.div>
@@ -303,7 +295,6 @@ const SwipeStack = ({ images }) => {
                 })}
             </AnimatePresence>
             
-            {/* Reset Button */}
             <button 
                 onClick={() => setCurrentIndex(0)}
                 className="absolute bottom-0 text-gray-500 text-[10px] font-black uppercase tracking-[0.3em] hover:text-white transition-colors"
