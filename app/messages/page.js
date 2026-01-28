@@ -39,6 +39,7 @@ const stagger = {
 
 export default function MessagesPage() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [isPlayingFeatured, setIsPlayingFeatured] = useState(false);
   const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -164,22 +165,38 @@ export default function MessagesPage() {
                 className="mb-16"
               >
                 <div className="bg-white rounded-3xl overflow-hidden shadow-xl shadow-blue-500/5 border border-slate-100 flex flex-col lg:flex-row items-stretch">
-                  <div className="lg:w-3/5 relative aspect-video cursor-pointer group">
-                      <Image
-                        src={featuredMessage.thumbnail}
-                        alt={featuredMessage.title}
-                        fill
-                        className="object-cover object-bottom transition-transform duration-700 group-hover:scale-105"
-                        unoptimized={featuredMessage.thumbnail.startsWith('http')}
-                      />
-                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors flex items-center justify-center">
-                          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-blue-600 rounded-full flex items-center justify-center shadow-2xl scale-90 group-hover:scale-100 transition-transform duration-300">
-                              <FiPlay className="text-white text-3xl sm:text-4xl ml-1" />
-                          </div>
-                      </div>
-                      <div className="absolute top-4 left-4">
-                          <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Latest Message</span>
-                      </div>
+                  <div 
+                    className="lg:w-3/5 relative aspect-video cursor-pointer group bg-black"
+                    onClick={() => setIsPlayingFeatured(true)}
+                  >
+                    {isPlayingFeatured ? (
+                      <iframe
+                        src={`https://www.youtube.com/embed/${featuredMessage.id}?autoplay=1&rel=0&modestbranding=1`}
+                        title={featuredMessage.title}
+                        className="absolute inset-0 w-full h-full"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
+                    ) : (
+                      <>
+                        <Image
+                          src={featuredMessage.thumbnail}
+                          alt={featuredMessage.title}
+                          fill
+                          className="object-cover object-bottom transition-transform duration-700 group-hover:scale-105"
+                          unoptimized={featuredMessage.thumbnail.startsWith('http')}
+                        />
+                        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-blue-600 rounded-full flex items-center justify-center shadow-2xl scale-90 group-hover:scale-100 transition-transform duration-300">
+                                <FiPlay className="text-white text-3xl sm:text-4xl ml-1" />
+                            </div>
+                        </div>
+                        <div className="absolute top-4 left-4">
+                            <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Latest Message</span>
+                        </div>
+                      </>
+                    )}
                   </div>
                   <div className="lg:w-2/5 p-8 sm:p-12 flex flex-col justify-center">
                       <div className="flex items-center gap-2 text-blue-600 font-semibold mb-3">

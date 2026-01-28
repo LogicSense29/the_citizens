@@ -35,55 +35,124 @@ function ImNewPageContent() {
             defaultValue='item-1'>
             <AccordionItem value='item-1'>
               <AccordionTrigger className=' text-2xl'>
-                Do we believe in Trinity?
+                The Bible
               </AccordionTrigger>
               <AccordionContent className='flex flex-col gap-4 text-balance'>
                 <p className=' text-[1rem]'>
-                  Our flagship product combines cutting-edge technology with
-                  sleek design. Built with premium materials, it offers
-                  unparalleled performance and reliability.
-                </p>
-                <p className=' text-[1rem]'>
-                  Key features include advanced processing capabilities, and an
-                  intuitive user interface designed for both beginners and
-                  experts.
+The Bible is the inspired Word of God, the product of holy men of old who spoke and wrote as they were moved by the Holy Spirit. We accept the new covenant, as recorded in the New Testament, as our infallible guide in matters pertaining to conduct and doctrine (2 Tim. 3:16; 1 Thess. 2:13; 2 Peter 1:21).
                 </p>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value='item-2'>
               <AccordionTrigger className=' text-2xl'>
-                Do we believe in Trinity?
+               The External Life and the New Birth
               </AccordionTrigger>
               <AccordionContent className='flex flex-col gap-4 text-balance'>
                 <p className=' text-[1rem]'>
-                  We offer worldwide shipping through trusted courier partners.
-                  Standard delivery takes 3-5 business days, while express
-                  shipping ensures delivery within 1-2 business days.
-                </p>
-                <p className=' text-[1rem]'>
-                  All orders are carefully packaged and fully insured. Track
-                  your shipment in real-time through our dedicated tracking
-                  portal.
+Man’s first step toward salvation is godly sorrow that worketh repentance. The New Birth is necessary to all men, and when experienced, produces eternal life (2 Cor. 7:10; John 3:3–5; 1 John 5:12).
                 </p>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value='item-3'>
               <AccordionTrigger className=' text-2xl'>
-                Do we believe in Trinity?
+                Jesus will Return 
               </AccordionTrigger>
               <AccordionContent className='flex flex-col gap-4 text-balance'>
                 <p className=' text-[1rem]'>
-                  We stand behind our products with a comprehensive 30-day
-                  return policy. If you&apos;re not completely satisfied, simply
-                  return the item in its original condition.
-                </p>
-                <p className=' text-[1rem]'>
-                  Our hassle-free return process includes free return shipping
-                  and full refunds processed within 48 hours of receiving the
-                  returned item.
+Following the Tribulation, He shall return to earth as King of kings, and Lord of lords, and together with His saints, who shall be kings and priests, He shall reign a thousand years (Rev. 5:10; 20:6).
                 </p>
               </AccordionContent>
             </AccordionItem>
+            <AccordionItem value='item-4'>
+              <AccordionTrigger className=' text-2xl'>
+                Baptism in the Holy Spirit
+              </AccordionTrigger>
+              <AccordionContent className='flex flex-col gap-4 text-balance'>
+                <p className=' text-[1rem]'>
+                  The Baptism in the Holy Spirit and fire is a gift from God as promised by the Lord Jesus Christ to all believers in this dispensation and is received subsequent to the New Birth. This experience is accompanied by the initial evidence of speaking in other tongues as the Holy Spirit Himself gives utterance (Matt. 3:11; John 14:16-17; Acts 1:8; Acts 2:38-39; Acts 19:1-7; Acts 2:1-4).
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+               <AccordionItem value='item-5'>
+                     <AccordionTrigger className=' text-2xl'>
+                       Water Baptism
+                     </AccordionTrigger>
+                     <AccordionContent className='flex flex-col gap-4 text-balance'>
+                       <p className=' text-[1rem]'>
+                       Baptism in water is by immersion, is a direct commandment of our Lord, and is for believers only. The ordinance is a symbol of the Christian’s identification with Christ in His death, burial, and resurrection (Matt. 28:19; Rom. 6:4; Col. 2:12; Acts 8:36-39). The following recommendation regarding the water baptismal formula is adopted; to wit: “On the confession of your faith in the Lord Jesus Christ, the Son of God, and by His authority, I baptize you in the Name of the Father, and of the Son, and of the Holy Spirit. Amen.”
+                       </p>
+                     </AccordionContent>
+                   </AccordionItem>
+                   <AccordionItem value='item-6'>
+                     <AccordionTrigger className=' text-2xl'>
+                       The Godhead
+                     </AccordionTrigger>
+                     <AccordionContent className='flex flex-col gap-4 text-balance'>
+                       <p className=' text-[1rem]'>
+                         Our God is One, but manifested in three Persons—the Father, the Son, and the Holy Spirit, being coequal (Deut. 6:4; Phil. 2:6). God the Father is greater than all; the Sender of the Word (Logos) and the Begetter (John 14:28; John 16:28; John 1:14). The Son is the Word flesh-covered, the One Begotten, and has existed with the Father from the beginning (John 1:1; John 1:18; John 1:14). The Holy Spirit proceeds forth from both the Father and the Son and is eternal (John 14:16; John 15:26).
+                       </p>
+                     </AccordionContent>
+                   </AccordionItem>
+                   <AccordionItem value='item-7'>
+                     <AccordionTrigger className=' text-2xl'>
+                       Man, His Fall, and Redemption
+                     </AccordionTrigger>
+                     <AccordionContent className='flex flex-col gap-4 text-balance'>
+                       <p className=' text-[1rem]'>
+                        Man is a created being, made in the likeness and image of God. But through Adam’s transgression and fall, sin came into the world. The Bible says “all have sinned, and come short of the glory of God,” and “There is none righteous, no, not one” (Rom. 3:10; 3:23). Jesus Christ, the Son of God, was manifested to undo the works of the devil, and He gave His life and shed His blood to redeem and restore mankind back to God (Rom. 5:14; 1 John 3:8). Salvation is the gift of God to mankind, separate from works and the Law, and is made operative by grace through faith in Jesus Christ, producing works acceptable to God (Eph. 2:8-10).
+                     </p>
+                     </AccordionContent>
+                   </AccordionItem>
+                   <AccordionItem value='item-8'>
+                     <AccordionTrigger className=' text-2xl'>
+                       Resurrection of the Just
+                     </AccordionTrigger>
+                     <AccordionContent className='flex flex-col gap-4 text-balance'>
+                       <p className=' text-[1rem]'>
+                        The angels said to Jesus’ disciples, “This same Jesus, which is taken up from you into heaven, shall so come in like manner as ye have seen him go into heaven.” His coming is imminent. When He comes, “The dead in Christ shall rise first: Then we which are alive and remain shall be caught up together with them in the clouds to meet the Lord in the air” (Acts 1:11; 1 Thess. 4:16-17).
+                        </p>
+                     </AccordionContent>
+                   </AccordionItem>
+                   <AccordionItem value='item-9'>
+                     <AccordionTrigger className=' text-2xl'>
+                       The Second Coming of Jesus
+                     </AccordionTrigger>
+                     <AccordionContent className='flex flex-col gap-4 text-balance'>
+                       <p className=' text-[1rem]'>
+                        The angels said to Jesus’ disciples, “This same Jesus, which is taken up from you into heaven, shall so come in like manner as ye have seen him go into heaven.” His coming is imminent. When He comes, “The dead in Christ shall rise first: Then we which are alive and remain shall be caught up together with them in the clouds to meet the Lord in the air” (Acts 1:11; 1 Thess. 4:16-17).
+                        </p>
+                     </AccordionContent>
+                   </AccordionItem>
+                   <AccordionItem value='item-10'>
+                     <AccordionTrigger className=' text-2xl'>
+                 Hell and Eternal Retribution
+                     </AccordionTrigger>
+                     <AccordionContent className='flex flex-col gap-4 text-balance'>
+                       <p className=' text-[1rem]'>
+                    The one who physically dies in his sins without accepting Christ is hopelessly and eternally lost in the lake of fire and, therefore, has no further opportunity of hearing the Gospel or repenting. The lake of fire is literal. The terms “eternal” and “everlasting,” used in describing the duration of the punishment of the damned in the lake of fire, carry the same thought and meaning of endless existence as used in denoting the duration of joy and ecstasy of saints in the Presence of God (Heb. 9:27; Rev. 19:20).
+                        </p>
+                     </AccordionContent>
+                   </AccordionItem>
+                    <AccordionItem value='item-11'>
+                     <AccordionTrigger className=' text-2xl'>
+                Sanctification
+                     </AccordionTrigger>
+                     <AccordionContent className='flex flex-col gap-4 text-balance'>
+                       <p className=' text-[1rem]'>
+                  The Bible teaches that without holiness no man can see the Lord. We believe in the Doctrine of Sanctification as a definite, yet progressive work of grace, commencing at the time of regeneration and continuing until the consummation of salvation at Christ’s return (Heb. 12:14; 1 Thess. 5:23; 2 Peter 3:18; 2 Cor. 3:18; Phil. 3:12–14; 1 Cor. 1:30).
+                        </p>
+                     </AccordionContent>
+                   </AccordionItem>
+                    <AccordionItem value='item-12'>
+                     <AccordionTrigger className=' text-2xl'>
+                Divine Healing
+                     </AccordionTrigger>
+                     <AccordionContent className='flex flex-col gap-4 text-balance'>
+                       <p className=' text-[1rem]'>
+              Healing is for the physical ills of the human body and is brought about by the power of God through the prayer of faith, and by the laying on of hands. It is provided for in the atonement of Christ, and is the privilege of every member of the Church today (James 5:14-15; Mark 16:18; Isa. 53:4-5; Matt. 8:17; 1 Peter 2:24).
+                        </p>
+                     </AccordionContent>
+                   </AccordionItem>
           </Accordion>
         </div>
       </div>
@@ -250,36 +319,32 @@ function ImNewPageContent() {
             defaultValue='item-1'>
             <AccordionItem value='item-1'>
               <AccordionTrigger className=' text-2xl'>
-                Do we believe in Trinity?
+                What Should I Wear?
               </AccordionTrigger>
               <AccordionContent className='flex flex-col gap-4 text-balance'>
                 <p className=' text-[1rem]'>
-                  Our flagship product combines cutting-edge technology with
-                  sleek design. Built with premium materials, it offers
-                  unparalleled performance and reliability.
+                 We want you to wear whatever makes you feel comfortable. You’ll see some people dressed in their nicest clothes, while others are supporting their team. We don’t care what you wear when you come, we just want to meet you!
                 </p>
-                <p className=' text-[1rem]'>
+                {/* <p className=' text-[1rem]'>
                   Key features include advanced processing capabilities, and an
                   intuitive user interface designed for both beginners and
                   experts.
-                </p>
+                </p> */}
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value='item-2'>
               <AccordionTrigger className=' text-2xl'>
-                Do we believe in Trinity?
+                What About Parking? 
               </AccordionTrigger>
               <AccordionContent className='flex flex-col gap-4 text-balance'>
                 <p className=' text-[1rem]'>
-                  We offer worldwide shipping through trusted courier partners.
-                  Standard delivery takes 3-5 business days, while express
-                  shipping ensures delivery within 1-2 business days.
+Free street parking is available on Sundays. Also, we share the parking lot behind the building with Zips Dry Cleaners. The parking lot can be accessed via an alley behind the building that connects Albemarle and Yuma Streets.
                 </p>
-                <p className=' text-[1rem]'>
+                {/* <p className=' text-[1rem]'>
                   All orders are carefully packaged and fully insured. Track
                   your shipment in real-time through our dedicated tracking
                   portal.
-                </p>
+                </p> */}
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value='item-3'>
@@ -292,14 +357,15 @@ function ImNewPageContent() {
                   return policy. If you&apos;re not completely satisfied, simply
                   return the item in its original condition.
                 </p>
-                <p className=' text-[1rem]'>
+                {/* <p className=' text-[1rem]'>
                   Our hassle-free return process includes free return shipping
                   and full refunds processed within 48 hours of receiving the
                   returned item.
-                </p>
+                </p> */}
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value='item-4'>
+            {/* The rest */}
+            {/* <AccordionItem value='item-4'>
               <AccordionTrigger className=' text-2xl'>
                 Do we believe in Trinity?
               </AccordionTrigger>
@@ -383,7 +449,7 @@ function ImNewPageContent() {
                   returned item.
                 </p>
               </AccordionContent>
-            </AccordionItem>
+            </AccordionItem> */}
           </Accordion>
         </div>
       </div>

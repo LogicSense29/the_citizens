@@ -145,7 +145,7 @@ export default function NikeOladeruPage() {
                                 An alumna of Rhema Bible Training College, Nike's songs have become anthems of revival in the body of Christ. Her music is not just performance; it is a portal for believers to encounter the living God. From "The Experience" to local gatherings, her voice carries a weight of authority and grace.
                             </p>
                             <p>
-                                Beyond the stage, she is a devoted mother of two; Niyi and Wura and a mentor to many young worship leaders across the globe. Her life is a testament to the beauty of balancing divine calling with family values.
+                                Beyond the stage, she is a devoted mother of two; Mother and a mentor to many young worship leaders across the globe. Her life is a testament to the beauty of balancing divine calling with family values.
                             </p>
                         </div>
                     </motion.div>

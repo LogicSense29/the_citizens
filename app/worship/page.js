@@ -218,7 +218,7 @@ export default function WorshipPage() {
               <div className="absolute inset-0 bg-blue-600 -translate-x-2 translate-y-2 sm:-translate-x-4 sm:translate-y-4 rounded-3xl z-0 transition-transform group-hover:-translate-x-3 group-hover:translate-y-3 sm:group-hover:-translate-x-6 sm:group-hover:translate-y-6" />
               <div className="relative z-10 overflow-hidden rounded-3xl shadow-2xl">
                 <Image
-                    src='/worship-sec4-img.png'
+                    src='/prayer-vigil.png'
                     alt='Vigil Service'
                     className='w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105'
                     width={800}
