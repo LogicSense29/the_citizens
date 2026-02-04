@@ -36,7 +36,7 @@ export default function YinkaOladeruPage() {
         <section className="relative min-h-screen flex items-center justify-center pt-24">
             <div className="absolute inset-0 z-0">
                 <Image 
-                    src="/oladeru-b.jpg" 
+                    src="/pastor-rectangle.svg" 
                     alt="Background" 
                     fill 
                     className="object-cover opacity-30 scale-105"
@@ -57,7 +57,7 @@ export default function YinkaOladeruPage() {
                         <div className="absolute inset-0 bg-blue-600/20 translate-x-4 translate-y-4 rounded-3xl -z-10 blur-2xl" />
                         <div className="relative aspect-[4/4] w-full max-w-md mx-auto rounded-[40px] overflow-hidden border border-white/10 shadow-2xl -rotate-2">
                             <Image 
-                                src="/oladeru-b.jpg" 
+                                src="/pastor-rectangle.svg" 
                                 alt="Yinka Oladeru" 
                                 fill 
                                 className="object-cover"
@@ -134,7 +134,7 @@ export default function YinkaOladeruPage() {
                         </h2>
                         
                         <div className="space-y-6 text-lg text-gray-300 leading-relaxed font-light">
-                            <p>
+                            {/* <p>
                                 Yinka Oladeru is a passionate lover of God whose sole drive is to see a generation of young people consumed with hunger for more of Jesus. He consistently desires and pursues a deeper walk with the Holy Spirit, which is the inspiration for his relentless drive to invest time in communion and prayer.
                             </p>
                             <p>
@@ -142,6 +142,14 @@ export default function YinkaOladeruPage() {
                             </p>
                             <p>
                                 With a wealth of ministerial experience, Yinka has served in various capacities, bringing a unique blend of spiritual depth and practical leadership. He is a devoted father to two beautiful children, balancing his calling with a deep commitment to family.
+                            </p> */}
+                            <p>
+                                Pastor Yinka Oladeru is a devoted Christian, avid reader, and passionate gardener with a strong commitment to Biblical truth and the work of the Holy Spirit. A graduate of Rhema Bible Training College, Tulsa, Oklahoma, he is firmly grounded in Biblical Studies and Spirit-led ministry. </p>
+                                                            <p>
+                                He serves faithfully alongside his wife and college sweetheart. He is a dedicated father to their children. Together, they reside in the suburbs of Washington, DC.
+                            </p>
+                            <p>
+                                Pastor Yinka carries a deep passion for raising Kingdom citizens believers who reign and rule on the earth through the power, wisdom, and guidance of the Holy Spirit.
                             </p>
                         </div>
                     </motion.div>

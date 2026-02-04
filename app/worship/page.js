@@ -175,7 +175,7 @@ export default function WorshipPage() {
               <div className="flex flex-col sm:flex-row gap-8 mb-10">
                  <div className="flex flex-col gap-1">
                     <span className="text-slate-400 text-xs font-bold uppercase">Schedule</span>
-                    <p className="text-[#0F172A] font-bold text-xl">Every Thursday</p>
+                    <p className="text-[#0F172A] font-bold text-xl">Every Tuesday</p>
                  </div>
                  <div className="flex flex-col gap-1 border-l border-slate-200 sm:pl-8">
                     <span className="text-slate-400 text-xs font-bold uppercase">Time</span>

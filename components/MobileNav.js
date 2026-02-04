@@ -16,7 +16,7 @@ const navLinks = [
     subLinks: [
       { href: "/yinka-oladeru", label: "Yinka Oladeru" },
       { href: "/nike-oladeru", label: "Nike Oladeru" },
-      { href: "/about", label: "Pastor Muyiwa" },
+      // { href: "/about", label: "Pastor Muyiwa" },
     ]
   },
   { href: "/im-new", label: "I'm new" },

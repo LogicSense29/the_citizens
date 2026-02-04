@@ -75,7 +75,7 @@ export default function NikeOladeruPage() {
                     >
                         <motion.div variants={fadeInUp} className="inline-flex items-center gap-2  py-2 rounded-full mb-6">
                             {/* <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" /> */}
-                            <span className="text-blue-400 text-xs font-bold uppercase tracking-widest">Worship Leader & Pastor</span>
+                            <span className="text-blue-400 text-xs font-bold uppercase tracking-widest">Co-Lead Pastor</span>
                         </motion.div>
                         
                         <motion.h1 variants={fadeInUp} className="text-5xl md:text-8xl font-black mb-6 leading-tight">
@@ -138,7 +138,7 @@ export default function NikeOladeruPage() {
                         </h2>
                         
                         <div className="space-y-6 text-lg text-gray-300 leading-relaxed font-light">
-                            <p>
+                            {/* <p>
                                 Nike Oladeru is a dynamic worship leader and songwriter whose ministry is defined by a deep hunger for the presence of God. Married to Yinka Oladeru since 2012, they have been a powerful team in ministry, serving together with a shared vision for transformation.
                             </p>
                             <p>
@@ -146,7 +146,14 @@ export default function NikeOladeruPage() {
                             </p>
                             <p>
                                 Beyond the stage, she is a devoted mother of two; Mother and a mentor to many young worship leaders across the globe. Her life is a testament to the beauty of balancing divine calling with family values.
+                            </p> */}
+                            <p>
+                                Pastor Nike Oladeru is a third-generation minister and a devoted servant of God. She is a Rhema Bible Training College alumna and brings a rich blend of ministry, leadership, and creativity to her calling.
                             </p>
+                            <p>Beyond her pastoral role, Pastor Nike is a gospel music recording artist, actor, logistics specialist, and commissioned naval officer. She is wife to Pastor Yinka Oladeru and a proud mother of two.
+
+</p>
+<p>Her life and ministry reflect a deep commitment to service, excellence, and advancing God’s Kingdom across both spiritual and professional spheres.</p>
                         </div>
                     </motion.div>
                 </div>

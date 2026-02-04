@@ -14,7 +14,7 @@ const links = [
     dropdown: [
       { path: "/yinka-oladeru", name: "Yinka Oladeru" },
       { path: "/nike-oladeru", name: "Nike Oladeru" },
-      { path: "/nike-oladeru", name: "Pastor Muyiwa" },
+      // { path: "/nike-oladeru", name: "Pastor Muyiwa" },
     ]
   },
   { path: "/im-new", name: "I'm new" },

@@ -489,7 +489,7 @@ export default function Home() {
             {/* <hr className='w-1/2' /> */}
           </div>
           <div className='flex flex-col lg:flex-row items-stretch justify-between lg:gap-15 gap-10'>
-            <div className='flex justify-center flex-1 relative min-h-[500px] lg:min-h-0 w-full group'>
+            <div className='flex justify-center flex-1 relative min-h-[500px] lg:min-h-[450px] w-full group'>
               {/* Stack effect */}
               <div className='absolute inset-0 border-2 border-[#006CFF] translate-x-2 translate-y-2 sm:translate-x-3 sm:translate-y-3 rounded-lg z-0 transition-transform duration-300 group-hover:translate-x-3 group-hover:translate-y-3 sm:group-hover:translate-x-5 sm:group-hover:translate-y-5'></div>
               <Image
@@ -545,29 +545,23 @@ export default function Home() {
 
           {/* Pastor Muyiwa */}
           <div className='flex flex-col lg:flex-row-reverse items-stretch justify-between lg:gap-15 gap-10'>
-            <div className='flex justify-center flex-1 relative min-h-[500px] lg:min-h-0 w-full group'>
+            <div className='flex justify-center flex-1 relative min-h-[500px] lg:min-h-[450px] w-full group'>
               {/* Stack effect */}
               <div className='absolute inset-0 border-2 border-[#006CFF] translate-x-2 translate-y-2 sm:translate-x-3 sm:translate-y-3 rounded-lg z-0 transition-transform duration-300 group-hover:translate-x-3 group-hover:translate-y-3 sm:group-hover:translate-x-5 sm:group-hover:translate-y-5'></div>
               <Image
                 src='/pastor-muyiwa.png'
                 alt='About Founder'
                 fill
-                className='rounded-lg object-cover relative z-10 shadow-2xl'
+                className='rounded-lg object-cover object-top relative z-10 shadow-2xl'
               />
             </div>
-            <div className='flex flex-col text-white space-y-6 flex-1 bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm justify-center'>
+            <div className='flex flex-col text-white space-y-6 flex-1 bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm justify-start'>
               <div className="w-16 h-1 bg-[#006CFF] mb-2"></div>
               <h2 className='text-xl sm:text-2xl font-bold text-start tracking-wide uppercase'>
-                PASTOR MUYIWA
+                MUYIWA ADESINA
               </h2>
               <p className='text-justify text-gray-300 leading-relaxed font-light'>
-                Pastors Yinka and Nike Oladeru are the dynamic leaders. Married
-                in 2012, they share a rich history, having met in college in
-                Nigeria. Both alumni of the prestigious Rhema Bible Training
-                College, they have been equipped with a strong foundation in
-                ministry. With a combined ministerial experience, they have
-                served in various capacities, including associate pastors.
-                Together, they are devoted parents to their two children.
+                Assistant Pastor
               </p>
               {/* <p className='text-base sm:text-xl text-gray-700 text-justify'>
                 Yinka and Nike Oladeru are passionate lover of God whose sole
@@ -584,11 +578,11 @@ export default function Home() {
               </p> */}
 
               <div className='flex flex-col md:flex-row gap-4 md:gap-16 justify-center md:justify-start pt-4'>
-                <Link
+                {/* <Link
                   className='w-full sm:w-[200px] px-6 py-4 sm:py-5 bg-transparent border border-white/20 flex items-center justify-center gap-2 rounded-md hover:bg-[#006CFF] hover:border-[#006CFF] transition-all duration-300 group'
                   href='/about'>
                   <p className='text-base sm:text-xl text-white'>Read bio</p>
-                </Link>
+                </Link> */}
 
                 {/* <button className='w-full sm:w-auto px-6 py-4 sm:py-5 bg-black flex items-center justify-center gap-2 rounded'>
                   <p className='text-base sm:text-xl text-white'>
