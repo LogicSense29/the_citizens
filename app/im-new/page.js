@@ -21,7 +21,7 @@ function ImNewPageContent() {
         {/* Conviction Section */}
         <div className='container w-full h-auto py-8 sm:py-12 pb-8 px-4'>
           <h2 className='text-accent text-2xl sm:text-4xl font-bold text-center'>
-            Our Convictions
+            What we Believe
           </h2>
           <p className='text-white text-base sm:text-2xl max-w-3xl mx-auto text-center mt-4 sm:mt-6'>
             While our approach remains contemporary, our beliefs stand the test
