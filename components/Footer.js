@@ -28,7 +28,7 @@ export default function Footer() {
               need guidance, or just want to connect, we are here and eager to
               help with it.
             </p>
-            <h3 className="font-semibold">Harmony Lane, Lagos, Nigeria.</h3>
+            <h3 className="font-semibold text-gray-400">4420 Connecticut Avenue NW, Washington, DC 20008</h3>
           </div>
         
           {/* Navigation Section */}

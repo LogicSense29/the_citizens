@@ -113,14 +113,14 @@ function ContactPageContent() {
               <ContactInfoCard 
                 icon={<FiMail className="text-cyan-400" />}
                 title="Email Us"
-                detail="info@thecitizensplace.com"
+                detail="info@citizensplace.com"
                 sub="Online Support 24/7"
               />
               <ContactInfoCard 
                 icon={<FiMapPin className="text-blue-400" />}
                 title="Visit Us"
-                detail="123 Harmony Lane"
-                sub="Lagos, Nigeria"
+                detail="4420 Connecticut Avenue NW"
+                sub="Washington, DC 20008"
               />
               <ContactInfoCard 
                 icon={<FiClock className="text-blue-500" />}
