@@ -13,10 +13,10 @@ const socialLinks = [
 ];
 
 const galleryImages = [
-  "/nike-oladeru.jpg",
-  "/pastor-nike.jpg",
-  "/sings-citizens.jpg",
-  "/hero-pastor.jpg",
+  "/potrait-nike-oladeru.jpg",
+  "/potrait-nike-oladeru1.jpg",
+  "/potrait-nike-oladeru2.jpg",
+  "/potrait-nike-oladeru3.jpg",
 ];
 
 const fadeInUp = {

@@ -71,9 +71,9 @@ function ContactPageContent() {
             animate="visible"
             variants={stagger}
           >
-            <motion.span variants={fadeInUp} className="inline-block text-blue-500 font-black uppercase tracking-[0.3em] text-xs mb-4">
+            {/* <motion.span variants={fadeInUp} className="inline-block text-blue-500 font-black uppercase tracking-[0.3em] text-xs mb-4">
               Get In Touch
-            </motion.span>
+            </motion.span> */}
             <motion.h1 
               variants={fadeInUp}
               className="text-5xl md:text-8xl font-black mb-6 leading-tight"
@@ -92,7 +92,7 @@ function ContactPageContent() {
       </section>
 
       {/* Main Interaction Section */}
-      <section className="relative z-20 -mt-20 pb-24">
+      <section className="relative z-20 -mt-10 pb-24">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-12 lg:items-start">
             
@@ -107,7 +107,7 @@ function ContactPageContent() {
               <ContactInfoCard 
                 icon={<FiPhone className="text-blue-500" />}
                 title="Call Us"
-                detail="+1 (555) 123-4567"
+                detail="+1 (202) 652-5667"
                 sub="Mon-Fri, 9am - 5pm"
               />
               <ContactInfoCard 
