@@ -347,7 +347,7 @@ Free street parking is available on Sundays. Also, we share the parking lot behi
                 </p> */}
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value='item-3'>
+            {/* <AccordionItem value='item-3'>
               <AccordionTrigger className=' text-2xl'>
                 Do we believe in Trinity?
               </AccordionTrigger>
@@ -356,14 +356,14 @@ Free street parking is available on Sundays. Also, we share the parking lot behi
                   We stand behind our products with a comprehensive 30-day
                   return policy. If you&apos;re not completely satisfied, simply
                   return the item in its original condition.
-                </p>
+                </p> */}
                 {/* <p className=' text-[1rem]'>
                   Our hassle-free return process includes free return shipping
                   and full refunds processed within 48 hours of receiving the
                   returned item.
                 </p> */}
-              </AccordionContent>
-            </AccordionItem>
+              {/* </AccordionContent>
+            </AccordionItem> */}
             {/* The rest */}
             {/* <AccordionItem value='item-4'>
               <AccordionTrigger className=' text-2xl'>
