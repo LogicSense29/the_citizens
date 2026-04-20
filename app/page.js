@@ -318,7 +318,7 @@ export default function Home() {
             <div className='bg-[#eaf3ff] rounded-lg '>
               <div className='relative'>
                 <Image
-                  src='https://img.youtube.com/vi/jrZVyuKCIjc/0.jpg'
+                  src='https://img.youtube.com/vi/GvhVBmrj4oo/0.jpg'
                   alt='YouTube Video Thumbnail for THE EXPERIENCE OF THE HOLY SPIRIT'
                   className='mb-4 w-full h-auto'
                   width={400}
@@ -326,7 +326,7 @@ export default function Home() {
                 />
                 <div className='absolute inset-0 flex items-center justify-center'>
                   <a
-                    href='https://youtu.be/jrZVyuKCIjc?si=a44chjuCwc9_C0Ow'
+                    href='https://youtu.be/GvhVBmrj4oo?si=cKeZyIRse47Zz-fh'
                     target='_blank'
                     rel='noopener noreferrer'>
                     <Image
@@ -340,7 +340,7 @@ export default function Home() {
                 </div>
               </div>
               <h3 className='text-base sm:text-lg md:text-xl font-semibold mb-2 text-gray-700'>
-                THE EXPERIENCE OF THE HOLY SPIRIT
+                CHRIST IS RISEN
               </h3>
               <p className='text-gray-700 text-sm sm:text-base md:text-lg'>
                 Kindly subscribe to our YouTube channel.
@@ -353,7 +353,7 @@ export default function Home() {
             <div className='bg-[#eaf3ff] rounded-lg'>
               <div className='relative'>
                 <Image
-                  src='https://img.youtube.com/vi/r318EKHXPcA/0.jpg'
+                  src='https://img.youtube.com/vi/Qmd2EdWwPqo/0.jpg'
                   alt='HOLY SPIRIT: PREDICTABLE OUTCOME'
                   className='mb-4 w-full h-auto'
                   width={400}
@@ -361,7 +361,7 @@ export default function Home() {
                 />
                 <div className='absolute inset-0 flex items-center justify-center'>
                   <a
-                    href='https://youtu.be/r318EKHXPcA?si=n4EQs6VLYviqvdMh'
+                    href='https://youtu.be/Qmd2EdWwPqo?si=7bg2QZePG4qAsrHy'
                     target='_blank'
                     rel='noopener noreferrer'>
                     <Image
@@ -375,20 +375,20 @@ export default function Home() {
                 </div>
               </div>
               <h3 className='text-base sm:text-lg md:text-xl font-semibold mb-2 text-gray-700'>
-                HOLY SPIRIT: PREDICTABLE OUTCOME
+                THE GREAT OUTPOUR 4
               </h3>
               <p className='text-gray-700 text-sm sm:text-base md:text-lg'>
                 Kindly subscribe to our YouTube channel.
               </p>
               <p className='text-gray-500 text-xs sm:text-sm md:text-base'>
-                4th January 2025
+                29th March 2026
               </p>
             </div>
             {/* 3rd card  */}
             <div className='bg-[#eaf3ff] rounded-lg'>
               <div className='relative'>
                 <Image
-                  src={'https://img.youtube.com/vi/NPMlEd-MEp8/hqdefault.jpg' || '/messages-img.png'}
+                  src={'https://img.youtube.com/vi/xlUc1o9p9Xs/hqdefault.jpg' || '/messages-img.png'}
                   alt='THE VIOCE OF A TRIUMPH'
                   className='mb-4 w-full h-auto'
                   width={400}
@@ -397,7 +397,7 @@ export default function Home() {
                 />
                 <div className='absolute inset-0 flex items-center justify-center'>
                   <a
-                    href='https://youtu.be/NPMlEd-MEp8?si=miVW0UfWz6r15ka_'
+                    href='https://youtu.be/xlUc1o9p9Xs?si=Jbcz3XEDBMP3bZVz'
                     target='_blank'
                     rel='noopener noreferrer'>
                     <Image
@@ -411,21 +411,21 @@ export default function Home() {
                 </div>
               </div>
               <h3 className='text-base sm:text-lg md:text-xl font-semibold mb-2 text-gray-700'>
-                THE VIOCE OF A TRIUMPH
+                THE GREAT OUTPOUR 3
               </h3>
               <p className='text-gray-700 text-sm sm:text-base md:text-lg'>
                 Kindly subscribe to our YouTube channel.
               </p>
               <p className='text-gray-500 text-xs sm:text-sm md:text-base'>
-                28th December 2025
+                22nd March 2026
               </p>
             </div>
           </div>
           <div className='w-full flex justify-center mt-6'>
-            <button className='w-full sm:w-auto px-6 py-4 sm:py-5 bg-[#006CFF] flex items-center justify-center gap-2 rounded-md'>
+            <a href="/messages" className='w-full sm:w-auto px-6 py-4 sm:py-5 bg-[#006CFF] flex items-center justify-center gap-2 rounded-md'>
               <p className='text-base sm:text-xl'>View all messages</p>
               <BsArrowRight className='text-white text-2xl sm:text-3xl' />
-            </button>
+            </a>
           </div>
         </div>
       </div>

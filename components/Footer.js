@@ -88,7 +88,7 @@ export default function Footer() {
           </div>
         </div>
         {/* Social Media Section */}
-        <div className='flex flex-wrap justify-center  gap-4 border-t-2 border-b-2 border-gray-400 py-6'>
+        <div className='flex flex-wrap justify-center  gap-4 border-t border-b border-gray-400/30 py-6'>
           <a
             href='#'
             className='text-gray-400 hover:text-white'

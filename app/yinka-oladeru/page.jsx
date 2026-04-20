@@ -3,7 +3,9 @@ import React from 'react';
 import Image from "next/image";
 import Link from 'next/link';
 import { motion, AnimatePresence } from "framer-motion";
-import { BsInstagram, BsTwitter, BsFacebook, BsYoutube, BsSpotify, BsMusicNoteBeamed, BsArrowRight, BsQuote } from "react-icons/bs";
+import { BsInstagram, BsTwitter, BsFacebook, BsYoutube, BsArrowRight, BsQuote } from "react-icons/bs";
+import { FiCalendar, FiUsers, FiPlay, FiLoader } from "react-icons/fi";
+import { getYinkaVideos } from "@/lib/youtube-yinka";
 
 const socialLinks = [
   { icon: <BsInstagram />, href: "#", label: "Instagram" },
@@ -29,6 +31,24 @@ const stagger = {
 };
 
 export default function YinkaOladeruPage() {
+  const [videos, setVideos] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    async function loadVideos() {
+      setLoading(true);
+      try {
+        const data = await getYinkaVideos(3);
+        setVideos(data);
+      } catch (err) {
+        console.error("Error loading Yinka's videos:", err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadVideos();
+  }, []);
+
   return (
     <main className="bg-[#0A0D11] min-h-screen text-white overflow-hidden">
         
@@ -57,10 +77,10 @@ export default function YinkaOladeruPage() {
                         <div className="absolute inset-0 bg-blue-600/20 translate-x-4 translate-y-4 rounded-3xl -z-10 blur-2xl" />
                         <div className="relative aspect-[4/4] w-full max-w-md mx-auto rounded-[40px] overflow-hidden border border-white/10 shadow-2xl -rotate-2">
                             <Image 
-                                src="/pastor-rectangle.svg" 
+                                src="/pastor-yinka.jpg" 
                                 alt="Yinka Oladeru" 
                                 fill 
-                                className="object-cover"
+                                className="object-cover object-top scale-x-[-1]"
                                 priority
                             />
                         </div>
@@ -157,7 +177,7 @@ export default function YinkaOladeruPage() {
             </div>
         </section>
 
-        {/* Messages Section - Placeholder for now */}
+        {/* Messages Section */}
         <section className="py-24 bg-[#0F172A]/50">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col items-center text-center mb-16">
@@ -177,18 +197,76 @@ export default function YinkaOladeruPage() {
                     </motion.div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {/* Placeholder for YouTube Embeds or Message Cards */}
-                    <div className="bg-white/5 border border-white/10 rounded-2xl p-6 h-64 flex items-center justify-center text-gray-500">
-                        Message Content Container
+                {loading ? (
+                    <div className="flex flex-col items-center justify-center py-20 gap-4">
+                        <FiLoader className="text-4xl text-blue-600 animate-spin" />
+                        <p className="text-gray-400 font-medium">Loading messages...</p>
                     </div>
-                    <div className="bg-white/5 border border-white/10 rounded-2xl p-6 h-64 flex items-center justify-center text-gray-500">
-                        Message Content Container
+                ) : videos.length > 0 ? (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {videos.map((video, index) => (
+                            <motion.div
+                                key={video.id}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                whileHover={{ y: -10 }}
+                                className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden group hover:border-blue-500/50 transition-all duration-500"
+                            >
+                                <div className="relative aspect-video overflow-hidden">
+                                    <Image
+                                        src={video.thumbnail}
+                                        alt={video.title}
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                        unoptimized
+                                    />
+                                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                                        <div className="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center scale-0 group-hover:scale-100 transition-transform duration-300 shadow-2xl">
+                                            <FiPlay className="text-white text-2xl ml-1" />
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div className="p-6">
+                                    <div className="flex items-center gap-2 text-blue-400 text-xs font-bold uppercase tracking-wider mb-2">
+                                        <span>{video.series}</span>
+                                    </div>
+                                    <h3 className="text-lg font-bold text-white mb-3 group-hover:text-blue-400 transition-colors line-clamp-2">
+                                        {video.title}
+                                    </h3>
+                                    <div className="flex flex-col gap-1 text-gray-400 text-sm mb-6">
+                                        <div className="flex items-center gap-1.5">
+                                            <FiUsers className="w-3.5 h-3.5" />
+                                            <span>{video.speaker}</span>
+                                        </div>
+                                        <div className="flex items-center gap-1.5">
+                                            <FiCalendar className="w-3.5 h-3.5" />
+                                            <span>{video.date}</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <a
+                                        href={`https://youtube.com/watch?v=${video.id}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center justify-between text-blue-400 font-semibold group/link"
+                                    >
+                                        <span className="text-sm">Watch Now</span>
+                                        <div className="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center group-hover/link:bg-blue-600 group-hover/link:text-white transition-colors">
+                                            <BsArrowRight />
+                                        </div>
+                                    </a>
+                                </div>
+                            </motion.div>
+                        ))}
                     </div>
-                    <div className="bg-white/5 border border-white/10 rounded-2xl p-6 h-64 flex items-center justify-center text-gray-500">
-                        Message Content Container
+                ) : (
+                    <div className="text-center py-20">
+                        <p className="text-gray-400 text-lg">No messages available at the moment.</p>
                     </div>
-                </div>
+                )}
             </div>
         </section>
 
