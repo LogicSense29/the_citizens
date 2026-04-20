@@ -9,7 +9,7 @@ const socialLinks = [
   { icon: <BsInstagram />, href: "https://instagram.com", label: "Instagram" },
   { icon: <BsTwitter />, href: "https://twitter.com", label: "Twitter" },
   { icon: <BsFacebook />, href: "https://facebook.com", label: "Facebook" },
-  { icon: <BsYoutube />, href: "https://youtube.com", label: "YouTube" },
+  { icon: <BsYoutube />, href: "https://youtube.com/channel/UCeavPPeMq5XZzks8KARYn1Q", label: "YouTube" },
 ];
 
 const galleryImages = [
