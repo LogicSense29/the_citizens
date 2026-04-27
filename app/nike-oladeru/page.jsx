@@ -198,7 +198,7 @@ export default function NikeOladeruPage() {
         </section>
 
         {/* Premium Gallery Section */}
-        <section className="py-24">
+        {/* <section className="py-24">
             <div className="container mx-auto px-4">
                 <div className="flex justify-between items-end sm:mb-12">
                     <div className="space-y-2">
@@ -210,7 +210,7 @@ export default function NikeOladeruPage() {
                     </Link>
                 </div>
 
-                {/* Desktop Grid / Mobile Stack Toggle */}
+                Desktop Grid / Mobile Stack Toggle
                 <div className="hidden sm:grid sm:grid-cols-2 md:grid-cols-4 gap-6">
                     {galleryImages.map((src, index) => (
                         <motion.div 
@@ -234,12 +234,12 @@ export default function NikeOladeruPage() {
                     ))}
                 </div>
 
-                {/* Mobile Swipe Stack */}
+                Mobile Swipe Stack
                 <div className="sm:hidden relative h-[500px] w-full mt-8 flex items-center justify-center">
                     <SwipeStack images={galleryImages} />
                 </div>
             </div>
-        </section>
+        </section> */}
     </main>
   );
 }

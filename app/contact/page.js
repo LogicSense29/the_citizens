@@ -110,12 +110,12 @@ function ContactPageContent() {
                 detail="+1 (202) 652-5667"
                 sub="Mon-Fri, 9am - 5pm"
               />
-              <ContactInfoCard 
+              {/* <ContactInfoCard 
                 icon={<FiMail className="text-cyan-400" />}
                 title="Email Us"
                 detail="info@citizensplace.com"
                 sub="Online Support 24/7"
-              />
+              /> */}
               <ContactInfoCard 
                 icon={<FiMapPin className="text-blue-400" />}
                 title="Visit Us"
@@ -125,8 +125,8 @@ function ContactPageContent() {
               <ContactInfoCard 
                 icon={<FiClock className="text-blue-500" />}
                 title="Service Times"
-                detail="Sundays: 9:00 AM"
-                sub="Wednesdays: 6:00 PM"
+                detail="Sundays: 6:00 PM EST"
+                // sub="Wednesdays: 6:00 PM"
               />
             </motion.div>
 
@@ -186,7 +186,7 @@ function ContactPageContent() {
                       <Input
                         name="phone"
                         type="tel"
-                        placeholder="+234 ..."
+                        placeholder="+1 ..."
                         value={form.phone}
                         onChange={handleChange}
                         className="bg-white/5 border-white/10 rounded-2xl h-14 px-6 focus:ring-blue-500/50"

@@ -28,43 +28,43 @@ export default function Footer() {
               need guidance, or just want to connect, we are here and eager to
               help with it.
             </p>
-            <h3 className="font-semibold text-gray-400">4420 Connecticut Avenue NW, Washington, DC 20008</h3>
+            <h3 className="font-semibold text-gray-400 text-center md:text-left">4420 Connecticut Avenue NW, Washington, DC 20008</h3>
           </div>
         
           {/* Navigation Section */}
           <div className='flex flex-col flex-1 space-y-4 w-full md:w-1/4'>
-            <a
+            {/* <a
               href='#'
               className='hover:text-gray-300 flex items-center justify-between'>
               About
               <FaAngleRight className='' />
-            </a>
+            </a> */}
             <a
-              href='#'
+              href='worship'
               className='hover:text-gray-300 flex items-center justify-between'>
               Worship
               <FaAngleRight className='' />
             </a>
             <a
-              href='#'
+              href='messages'
               className='hover:text-gray-300 flex items-center justify-between'>
               Messages
               <FaAngleRight className='' />
             </a>
             <a
-              href='#'
+              href='im-new'
               className='hover:text-gray-300 flex items-center justify-between'>
               I'm new
               <FaAngleRight className='' />
             </a>
             <a
-              href='#'
+              href='give'
               className='hover:text-gray-300 flex items-center justify-between'>
               Give
               <FaAngleRight className='' />
             </a>
             <a
-              href='#'
+              href='contact'
               className='hover:text-gray-300 flex items-center justify-between'>
               Contact us
               <FaAngleRight className='' />
