@@ -1,6 +1,6 @@
 export default function WorkInProgressPage() {
   return (
-    <main className="min-h-screen bg-[#0A0D11] flex items-center justify-center text-white px-4">
+    <div className="fixed inset-0 z-[9999] bg-[#0A0D11] flex items-center justify-center text-white px-4">
       <div className="text-center max-w-md">
         <div className="w-16 h-16 mx-auto mb-8 rounded-full bg-blue-600/20 border border-blue-500/30 flex items-center justify-center">
           <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -14,6 +14,6 @@ export default function WorkInProgressPage() {
           This page is currently being built. Check back soon.
         </p>
       </div>
-    </main>
+    </div>
   );
 }

@@ -15,15 +15,13 @@ export const metadata = {
   description: "The Citizens Church",
 };
 
-const IS_PRODUCTION = process.env.NODE_ENV === "production";
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${spaceGrotesk.variable}`}>
-        {!IS_PRODUCTION && <Header />}
+        <Header />
         <PageTransition>{children}</PageTransition>
-        {!IS_PRODUCTION && <Footer />}
+        <Footer />
       </body>
     </html>
   );
