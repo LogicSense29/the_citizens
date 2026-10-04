@@ -255,7 +255,7 @@ Following the Tribulation, He shall return to earth as King of kings, and Lord o
                         </Button>
                       </TooltipTrigger>
                       <TooltipContent>
-                        <p>Wear whatever makes you comfortable — we just want to meet you!</p>
+                        <p>Wear whatever makes you comfortable â€” we just want to meet you!</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
