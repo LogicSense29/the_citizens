@@ -103,7 +103,7 @@ export default function YinkaOladeruPage() {
                         </motion.h1>
                         
                         <motion.p variants={fadeInUp} className="text-xl text-gray-400 max-w-xl mb-10 leading-relaxed font-light">
-                            A dynamic leader and passionate teacher of the Word, dedicated to raising a generation consumed with hunger for Jesus.
+                            A dynamic leader and Apostolic teacher of the Word, called to raise a generation with a deep hunger for Jesus.
                         </motion.p>
 
                         <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

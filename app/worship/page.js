@@ -97,10 +97,10 @@ export default function WorshipPage() {
           </motion.p>
 
           <motion.div variants={fadeInUp} className='flex flex-col sm:flex-row justify-center gap-6 w-full max-w-md'>
-            <button className='w-full sm:w-auto px-6 py-4 sm:py-5 bg-[#006CFF] hover:bg-blue-700 text-white flex items-center justify-center gap-3 rounded-md shadow-xl shadow-blue-600/20 transiton-all duration-300 active:scale-95 group'>
+            <a href="https://www.youtube.com/@ThecitizensplaceTV" target="_blank" rel="noopener noreferrer" className='w-full sm:w-auto px-6 py-4 sm:py-5 bg-[#006CFF] hover:bg-blue-700 text-white flex items-center justify-center gap-3 rounded-md shadow-xl shadow-blue-600/20 transition-all duration-300 active:scale-95 group'>
               <span className='text-lg font-bold'>Join us online</span>
               <BsArrowRight className='text-2xl group-hover:translate-x-1 transition-transform' />
-            </button>
+            </a>
           </motion.div>
         </motion.div>
       </section>
@@ -169,7 +169,7 @@ export default function WorshipPage() {
                 Weekly Prayer <span className="text-blue-600">&</span> Word
               </h2>
               <p className='text-slate-600 text-lg sm:text-xl leading-relaxed mb-10 max-w-lg'>
-                Fuel your spiritual fire weekly. Every Tuesday, we gather to intercede and dive deeper into revelations.
+                Join us for our weekly prayer meeting as we learn to pray effectively, pray in faith, stand firmly on God's Word, and declare His promises, believing that "with God all things are possible." — Matthew 19:26
               </p>
               
               <div className="flex flex-col sm:flex-row gap-8 mb-10">

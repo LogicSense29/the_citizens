@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { FaAngleRight, FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
@@ -24,9 +24,7 @@ export default function Footer() {
               />
             </Link>
             <p className='text-center md:text-left'>
-              Whether you are dealing with challenges, have prayer requests,
-              need guidance, or just want to connect, we are here and eager to
-              help with it.
+              Whether you are facing challenges, have a prayer request, need guidance, or simply want to connect, we are here to walk with you, pray with you, and support you.
             </p>
             <h3 className="font-semibold text-gray-400 text-center md:text-left">4420 Connecticut Avenue NW, Washington, DC 20008</h3>
           </div>

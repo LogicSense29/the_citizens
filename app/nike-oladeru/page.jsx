@@ -104,7 +104,7 @@ export default function NikeOladeruPage() {
                         </motion.h1>
                         
                         <motion.p variants={fadeInUp} className="text-xl text-gray-400 max-w-xl mb-10 leading-relaxed font-light">
-                            A voice that transcends melodies, bringing heaven closer through spirit-led worship and deep biblical insight.
+                            A passionate pastor, prophetic voice, and recording gospel artist, dedicated to leading people into deeper faith, worship, and intimacy with God.
                         </motion.p>
 
                         <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -170,9 +170,7 @@ export default function NikeOladeruPage() {
                             <p>
                                 Pastor Nike Oladeru is a third-generation minister and a devoted servant of God. She is a Rhema Bible Training College alumna and brings a rich blend of ministry, leadership, and creativity to her calling.
                             </p>
-                            <p>Beyond her pastoral role, Pastor Nike is a gospel music recording artist, actor, logistics specialist, and commissioned naval officer. She is wife to Pastor Yinka Oladeru and a proud mother of two.
-
-</p>
+                            <p>Beyond her pastoral role, Pastor Nike is a gospel music recording artist, actor, logistics specialist, and commissioned naval officer. She is wife to Pastor Yinka Oladeru and a proud mother of three.</p>
 <p>Her life and ministry reflect a deep commitment to service, excellence, and advancing God’s Kingdom across both spiritual and professional spheres.</p>
                         </div>
                     </motion.div>

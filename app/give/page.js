@@ -44,8 +44,11 @@ function GivePageContent() {
         }}>
         <div className='container text-center w-full h-auto py-8 sm:py-12 pb-8 px-4'>
           <h1 className=' text-4xl font-bold'>
-            THITHES, OFFERINGS & OTHER INITIATIVES
+            TITHES, OFFERINGS &amp; OTHER INITIATIVES
           </h1>
+          <p className='text-gray-600 text-lg max-w-2xl mx-auto mt-4'>
+            &ldquo;Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver.&rdquo; — 2 Corinthians 9:7
+          </p>
           {/* icons and details flexbox and button  */}
           <div className=''>
             <div className='flex flex-col md:flex-row gap-12 items-center justify-center mt-12'>
@@ -56,34 +59,34 @@ function GivePageContent() {
                     <FaCcStripe className='text-purple-600 w-6 h-6 rounded-full p-1 border-2 border-purple-600' />
                     <p>Zelle</p>
                   </div>
-                  <p>@thecitizensplace</p>
+                  <p>Thecitizensministry@gmail.com</p>
                 </div>
               </div>
 
               <div className='border border-yellow-400 rounded-tl-lg rounded-tr-lg rounded-bl-3xl rounded-br-3xl mb-6 p-12 text-white flex items-center'>
                 <div>
                   <div className='flex justify-center items-center gap-4 mb-2'>
-                    <FaCcStripe className='text-purple-600 w-6 h-6 rounded-full p-1 border-2 border-purple-600' />
-                    <p>Zelle</p>
+                    <FaPaypal className='text-blue-600 w-6 h-6 rounded-full p-1 border-2 border-blue-600' />
+                    <p>PayPal</p>
                   </div>
-                  <p>@thecitizensplace</p>
+                  <p>Thecitizensministry@gmail.com</p>
                 </div>
               </div>
 
               <div className='border border-yellow-400 rounded-tl-lg rounded-tr-lg rounded-bl-3xl rounded-br-3xl mb-6 p-12 text-white flex items-center'>
                 <div>
                   <div className='flex justify-center items-center gap-4 mb-2'>
-                    <FaCcStripe className='text-purple-600 w-6 h-6 rounded-full p-1 border-2 border-purple-600' />
-                    <p>Zelle</p>
+                    <FaCashRegister className='text-green-600 w-6 h-6 rounded-full p-1 border-2 border-green-600' />
+                    <p>Cash App</p>
                   </div>
-                  <p>@thecitizensplace</p>
+                  <p>$thecitizensplace</p>
                 </div>
               </div>
             </div>
           </div>
-          <button className='sm:w-auto px-6 py-4 sm:py-5 bg-[#006CFF] flex items-center justify-center gap-2 rounded-md text-center mx-auto mt-6'>
+          <a href='/contact' className='sm:w-auto px-6 py-4 sm:py-5 bg-[#006CFF] flex items-center justify-center gap-2 rounded-md text-center mx-auto mt-6 w-fit'>
             <p className='text-base sm:text-xl text-white'>Contact Us</p>
-          </button>
+          </a>
         </div>
       </div>
     </div>

@@ -25,8 +25,7 @@ function ImNewPageContent() {
           </h2>
           <p className='text-white text-base sm:text-2xl max-w-3xl mx-auto text-center mt-4 sm:mt-6'>
             While our approach remains contemporary, our beliefs stand the test
-            of time. Our methods may grow, but these core beliefs will forever
-            remain the foundation of LifePoints.
+            of time. These core beliefs are the foundation of The Citizens Place Church.
           </p>
           <Accordion
             type='single'
@@ -197,7 +196,7 @@ Following the Tribulation, He shall return to earth as King of kings, and Lord o
               FAQs
             </h2>
             <p className='text-white text-base sm:text-2xl max-w-xl text-start mt-4 sm:mt-6'>
-              Everything you ned to know about The Citizen's Place Church
+              Everything you need to know about The Citizens Place Church
             </p>
             <div className='mt-6 max-w-xl flex flex-wrap justify-between'>
               {/* item  */}
@@ -211,7 +210,7 @@ Following the Tribulation, He shall return to earth as King of kings, and Lord o
                         </Button>
                       </TooltipTrigger>
                       <TooltipContent>
-                        <p>Somewhere on the map</p>
+                        <p>4420 Connecticut Avenue NW, Washington, DC 20008</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
@@ -225,7 +224,7 @@ Following the Tribulation, He shall return to earth as King of kings, and Lord o
                         </Button>
                       </TooltipTrigger>
                       <TooltipContent>
-                        <p>Add to library</p>
+                        <p>We hold Holy Communion service every last Sunday of the month.</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
@@ -242,7 +241,7 @@ Following the Tribulation, He shall return to earth as King of kings, and Lord o
                         </Button>
                       </TooltipTrigger>
                       <TooltipContent>
-                        <p>Add to library</p>
+                        <p>Water baptism by immersion is for all believers as a symbol of new life in Christ.</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
@@ -256,7 +255,7 @@ Following the Tribulation, He shall return to earth as King of kings, and Lord o
                         </Button>
                       </TooltipTrigger>
                       <TooltipContent>
-                        <p>Add to library</p>
+                        <p>Wear whatever makes you comfortable � we just want to meet you!</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
@@ -273,7 +272,7 @@ Following the Tribulation, He shall return to earth as King of kings, and Lord o
                         </Button>
                       </TooltipTrigger>
                       <TooltipContent>
-                        <p>Add to library</p>
+                        <p>Membership classes are available for those who want to go deeper.</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
@@ -287,7 +286,7 @@ Following the Tribulation, He shall return to earth as King of kings, and Lord o
                         </Button>
                       </TooltipTrigger>
                       <TooltipContent>
-                        <p>Add to library</p>
+                        <p>Listen to Pastor Nike Oladeru&apos;s music on all streaming platforms.</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
@@ -304,7 +303,7 @@ Following the Tribulation, He shall return to earth as King of kings, and Lord o
                         </Button>
                       </TooltipTrigger>
                       <TooltipContent>
-                        <p>Add to library</p>
+                        <p>Contact us to schedule a baby dedication with our pastoral team.</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
@@ -325,11 +324,6 @@ Following the Tribulation, He shall return to earth as King of kings, and Lord o
                 <p className=' text-[1rem]'>
                  We want you to wear whatever makes you feel comfortable. You’ll see some people dressed in their nicest clothes, while others are supporting their team. We don’t care what you wear when you come, we just want to meet you!
                 </p>
-                {/* <p className=' text-[1rem]'>
-                  Key features include advanced processing capabilities, and an
-                  intuitive user interface designed for both beginners and
-                  experts.
-                </p> */}
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value='item-2'>
@@ -340,11 +334,16 @@ Following the Tribulation, He shall return to earth as King of kings, and Lord o
                 <p className=' text-[1rem]'>
 Free street parking is available on Sundays. Also, we share the parking lot behind the building with Zips Dry Cleaners. The parking lot can be accessed via an alley behind the building that connects Albemarle and Yuma Streets.
                 </p>
-                {/* <p className=' text-[1rem]'>
-                  All orders are carefully packaged and fully insured. Track
-                  your shipment in real-time through our dedicated tracking
-                  portal.
-                </p> */}
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value='item-hc'>
+              <AccordionTrigger className=' text-2xl'>
+                Holy Communion
+              </AccordionTrigger>
+              <AccordionContent className='flex flex-col gap-4 text-balance'>
+                <p className=' text-[1rem]'>
+                  We hold Holy Communion service every last Sunday of the month.
+                </p>
               </AccordionContent>
             </AccordionItem>
             {/* <AccordionItem value='item-3'>

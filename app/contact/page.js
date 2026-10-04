@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMail, FiMapPin, FiPhone, FiSend, FiClock } from "react-icons/fi";
+import { FaInstagram, FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -126,7 +127,7 @@ function ContactPageContent() {
                 icon={<FiClock className="text-blue-500" />}
                 title="Service Times"
                 detail="Sundays: 6:00 PM EST"
-                // sub="Wednesdays: 6:00 PM"
+                sub="Tuesdays: 9:00 PM EST | 3rd Fridays: 10:00 PM EST"
               />
             </motion.div>
 
@@ -261,6 +262,36 @@ function ContactPageContent() {
             <div className="absolute bottom-8 left-8 bg-black/60 backdrop-blur-md border border-white/10 p-6 rounded-3xl max-w-sm">
                 <h4 className="font-black uppercase tracking-widest text-xs text-blue-400 mb-2">Our Sanctuary</h4>
                 <p className="text-white text-sm leading-relaxed">Join us for worship at our physical location. Everyone is welcome to experience the power of community.</p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+      {/* Social Media Section */}
+      <section className="py-16 border-t border-white/5">
+        <div className="container mx-auto px-4 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-xs font-black uppercase tracking-[0.3em] text-gray-500 mb-6">Follow Us</h3>
+            <div className="flex justify-center gap-6">
+              <a href="https://www.instagram.com/thecitizensplace" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                className="w-14 h-14 flex items-center justify-center bg-white/5 border border-white/10 rounded-2xl hover:bg-pink-600 hover:border-pink-600 transition-all text-xl text-gray-400 hover:text-white">
+                <FaInstagram />
+              </a>
+              <a href="https://www.facebook.com/thecitizensplace" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+                className="w-14 h-14 flex items-center justify-center bg-white/5 border border-white/10 rounded-2xl hover:bg-blue-700 hover:border-blue-700 transition-all text-xl text-gray-400 hover:text-white">
+                <FaFacebook />
+              </a>
+              <a href="https://www.twitter.com/thecitizensplace" target="_blank" rel="noopener noreferrer" aria-label="Twitter"
+                className="w-14 h-14 flex items-center justify-center bg-white/5 border border-white/10 rounded-2xl hover:bg-sky-500 hover:border-sky-500 transition-all text-xl text-gray-400 hover:text-white">
+                <FaTwitter />
+              </a>
+              <a href="https://www.youtube.com/@ThecitizensplaceTV" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
+                className="w-14 h-14 flex items-center justify-center bg-white/5 border border-white/10 rounded-2xl hover:bg-red-600 hover:border-red-600 transition-all text-xl text-gray-400 hover:text-white">
+                <FaYoutube />
+              </a>
             </div>
           </motion.div>
         </div>
