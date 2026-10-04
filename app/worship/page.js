@@ -1,4 +1,4 @@
-"use client";
+﻿﻿"use client";
 import Image from "next/image";
 import { BsArrowRight, BsYoutube, BsCalendar, BsGoogle } from "react-icons/bs";
 import { motion, AnimatePresence } from "framer-motion";
@@ -169,7 +169,7 @@ export default function WorshipPage() {
                 Weekly Prayer <span className="text-blue-600">&</span> Word
               </h2>
               <p className='text-slate-600 text-lg sm:text-xl leading-relaxed mb-10 max-w-lg'>
-                Join us for our weekly prayer meeting as we learn to pray effectively, pray in faith, stand firmly on God's Word, and declare His promises, believing that "with God all things are possible." � Matthew 19:26
+                Join us for our weekly prayer meeting as we learn to pray effectively, pray in faith, stand firmly on God's Word, and declare His promises, believing that "with God all things are possible." — Matthew 19:26
               </p>
               
               <div className="flex flex-col sm:flex-row gap-8 mb-10">
@@ -268,3 +268,4 @@ export default function WorshipPage() {
     </main>
   );
 }
+
