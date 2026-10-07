@@ -67,11 +67,11 @@ export default function Home() {
             {/* Editorial metadata strip */}
             <motion.div
               variants={fadeInUp}
-              className='flex items-center gap-5 mb-10 text-gray-500 text-xs font-bold uppercase tracking-widest'
+              className='flex items-center gap-5 mb-10 text-gray-400 sm:text-gray-500 text-xs font-bold uppercase tracking-widest'
             >
-              <span className='block w-px h-8 bg-white/10' />
+              <span className='block w-px h-8 bg-white/20 sm:bg-white/10' />
               <span>Sundays &middot; 6:00 PM EST</span>
-              <span className='block w-px h-8 bg-white/10' />
+              <span className='block w-px h-8 bg-white/20 sm:bg-white/10' />
               <span className='hidden sm:block'>Washington, DC</span>
             </motion.div>
 
