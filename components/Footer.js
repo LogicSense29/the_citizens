@@ -190,7 +190,7 @@ export default function Footer() {
         {/* ── Bottom bar ── */}
         <div className="w-full h-px bg-white/5 mb-6" />
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white/20 text-[10px] font-black uppercase tracking-[0.2em]">
+          <p className="text-white/20 text-[10px] text-center font-black uppercase tracking-[0.2em]">
             © {year} The Citizens Place Church. All rights reserved.
           </p>
           <p
