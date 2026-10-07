@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import Image from "next/image";
 import { BsArrowRight, BsYoutube } from "react-icons/bs";
 import { useRef } from "react";
@@ -76,10 +76,10 @@ export default function Home() {
             </motion.div>
 
             {/* CTAs */}
-            <motion.div variants={fadeInUp} className='flex flex-col sm:flex-row gap-4 items-start'>
+            <motion.div variants={fadeInUp} className='flex flex-col sm:flex-row gap-4'>
               <a
                 href="/im-new"
-                className='group inline-flex items-center gap-3 px-8 py-4 bg-[#006CFF] hover:bg-[#0055cc] text-white font-bold rounded-md shadow-lg shadow-blue-500/20 transition-all duration-300 sm:w-fit'
+                className='group inline-flex items-center gap-3 px-8 py-4 bg-[#006CFF] hover:bg-[#0055cc] text-white font-bold rounded-md shadow-lg shadow-blue-500/20 transition-all duration-300'
               >
                 I&apos;m New Here
                 <BsArrowRight className='text-lg transition-transform duration-300 group-hover:translate-x-1' />
@@ -277,31 +277,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── ATMOSPHERE STRIP ── */}
-      <div className='relative w-full h-[55vh] overflow-hidden'>
-        <Image
-          src='/sings-citizens.jpg'
-          alt='The Citizens Place Church community in worship'
-          fill
-          className='object-cover object-center'
-          priority={false}
-        />
-        {/* Dark gradient — heavy fade top and bottom so image fully dissolves into surrounding sections */}
-        <div className='absolute inset-0 bg-gradient-to-b from-[#0A0D11] via-transparent to-[#0A0D11]' />
-        {/* Extra mid-blend — softens the centre so it doesn't feel like a hard photo box */}
-        <div className='absolute inset-0 bg-[#0A0D11]/20' />
-
-        {/* Small caption bottom-right */}
-        <div className='absolute bottom-6 right-6 sm:right-10 flex items-center gap-3'>
-          <span className='block w-6 h-px bg-white/30' />
-          <span className='text-white/40 text-[10px] font-black uppercase tracking-[0.25em]'>
-            The Citizens Place · Washington DC
-          </span>
-        </div>
-      </div>
-
       {/* ── OUR MESSAGES SECTION ── */}
-
       <section className='relative w-full bg-[#0A0D11] overflow-hidden'>
         <div className='w-full h-px bg-white/5' />
 
@@ -311,7 +287,7 @@ export default function Home() {
           <div className='flex items-end justify-between mb-14'>
             <div>
               <div className='flex items-center gap-3 mb-4'>
-                {/* <span className='block w-8 h-px bg-[#006CFF]' /> */}
+                <span className='block w-8 h-px bg-[#006CFF]' />
                 <span className='text-[#006CFF] text-xs font-black uppercase tracking-[0.25em]'>
                   Latest
                 </span>
