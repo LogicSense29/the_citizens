@@ -1,115 +1,182 @@
-"use client";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+﻿"use client";
 import Image from "next/image";
 import { BsArrowRight, BsYoutube } from "react-icons/bs";
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import { motion } from "framer-motion";
-
-const images = [
-  "/sings-citizens.jpg",
-  "/hero-pastor.jpg",
-  "/home-1.jpg",
-  "/nikeandmember.jpg"
-];
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Home() {
 
-    const [current, setCurrent] = useState(0);
+    // Parallax for image panel
+    const heroRef = useRef(null);
+    const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
+    const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
 
-    // Auto slide every 4 seconds
-    useEffect(() => {
-      const timer = setInterval(() => {
-        setCurrent((prev) => (prev + 1) % images.length);
-      }, 4000);
-      return () => clearInterval(timer);
-    }, []);
-
-    // Animation Variants
+    // Animation variants
     const fadeInUp = {
-      hidden: { opacity: 0, y: 20 },
-      visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+      hidden: { opacity: 0, y: 30 },
+      visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } }
     };
-
+    const fadeInRight = {
+      hidden: { opacity: 0, x: 60 },
+      visible: { opacity: 1, x: 0, transition: { duration: 1, ease: [0.22, 1, 0.36, 1] } }
+    };
     const staggerContainer = {
       hidden: { opacity: 0 },
-      visible: {
-        opacity: 1,
-        transition: {
-          staggerChildren: 0.2
-        }
-      }
+      visible: { opacity: 1, transition: { staggerChildren: 0.15, delayChildren: 0.3 } }
     };
 
   return (
     <section className='w-full min-h-screen bg-[#0A0D11]'>
-      {/* Hero Section */}
-      <div className='relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden'>
-        {/* Background Images with Zoom Effect */}
-        {images.map((img, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-              index === current ? "opacity-100 scale-110" : "opacity-0 scale-100"
-            }`}
+
+      {/* ── KINETIC SPLIT HERO ── */}
+      <div ref={heroRef} className='relative min-h-screen w-full overflow-hidden flex'>
+
+        {/* LEFT CONTENT PANE */}
+        <div className='relative z-20 flex flex-col justify-center w-full lg:w-[58%] min-h-screen px-6 sm:px-12 lg:px-20 pt-32 pb-16'>
+
+          {/* Ambient blue glow */}
+          <div className='absolute top-1/2 left-0 -translate-y-1/2 w-[600px] h-[600px] bg-[#006CFF]/10 rounded-full blur-[120px] pointer-events-none' />
+
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className='relative z-10 max-w-2xl'
           >
-            <Image
-              src={img}
-              alt="Hero Background"
-              fill
-              className="object-cover"
-              priority={index === 0}
-            />
-          </div>
-        ))}
-        {/* Overlay */}
-        <div className='absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[#0A0D11] z-10'></div>
-        
-        {/* Hero Content */}
-        <motion.div 
-          className='container mx-auto min-h-screen relative z-20 flex flex-col items-center justify-center w-full pt-[180px] pb-8 px-4 sm:px-6'
-          animate="visible"
-          variants={staggerContainer}
-        >
-          <motion.h4 variants={fadeInUp} className='text-accent font-bold text-sm sm:text-xl mb-4 leading-none text-center tracking-wider uppercase'>
-            Welcome to The Citizens Place Church
-          </motion.h4>
-          <motion.h1 variants={fadeInUp} className='leading-tight text-4xl sm:text-6xl md:text-8xl text-white font-bold mb-6 text-center max-w-5xl drop-shadow-2xl'>
-            You are only a visitor once at{" "}<span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300'>The Citizens Place Church!</span>
-          </motion.h1>
-          <motion.p variants={fadeInUp} className='text-lg sm:text-xl text-gray-200 mb-10 text-center max-w-2xl leading-relaxed'>
-            Each encounter is more than a visit, it’s a step towards becoming family, regardless of your journey.
-          </motion.p>
-          {/* hero buttons or actions */}
-          <motion.div variants={fadeInUp} className='flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 w-full lg:mb-6'>
-            <motion.a href="/im-new"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className='w-full sm:w-auto px-8 py-4 sm:py-5 bg-[#006CFF] hover:bg-[#0055cc] flex items-center justify-center gap-3 rounded-md shadow-lg shadow-blue-500/30 transition-colors'
+            {/* Overline */}
+            <motion.div variants={fadeInUp} className='flex items-center gap-3 mb-8'>
+              {/* <span className='block w-8 h-px bg-[#006CFF]' /> */}
+              <span className='text-[#006CFF] text-xs font-black uppercase tracking-[0.25em]'>
+                The Citizens Place Church
+              </span>
+            </motion.div>
+
+            {/* Display headline — solid + stroke mix */}
+            <motion.h1 variants={fadeInUp} className='font-black leading-[0.95] mb-8'>
+              <span className='block text-[clamp(2.8rem,6.0vw,5.0rem)] text-white'>
+                We Connect
+              </span>
+              <span className='block text-[clamp(2.8rem,6.0vw,5.0rem)] text-white'>
+                Creation to
+              </span>
+              <span className='block text-[clamp(2.8rem,6.5vw,5.5rem)]'>
+                <span className='text-white'>the </span><span style={{ WebkitTextStroke: "2px #006CFF", color: "transparent", letterSpacing: "-0.02em" }}>CREATOR</span>
+              </span>
+            </motion.h1>
+
+            {/* Editorial metadata strip */}
+            <motion.div
+              variants={fadeInUp}
+              className='flex items-center gap-5 mb-10 text-gray-500 text-xs font-bold uppercase tracking-widest'
             >
-              <p className='text-lg sm:text-xl font-medium text-white'>I am new</p>
-              <BsArrowRight className='text-white text-2xl' />
-            </motion.a>
-            <motion.a target="_blank" href="https://www.youtube.com/@ThecitizensplaceTV"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className='w-full sm:w-auto px-8 py-4 sm:py-5 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 flex items-center justify-center gap-3 rounded-md transition-colors'
-            >
-              <BsYoutube className='text-white text-2xl' />
-              <p className='text-lg sm:text-xl font-medium text-white'>Watch Online</p>
-            </motion.a>
+              <span className='block w-px h-8 bg-white/10' />
+              <span>Sundays &middot; 6:00 PM EST</span>
+              <span className='block w-px h-8 bg-white/10' />
+              <span className='hidden sm:block'>Washington, DC</span>
+            </motion.div>
+
+            {/* CTAs */}
+            <motion.div variants={fadeInUp} className='flex flex-col sm:flex-row gap-4'>
+              <a
+                href="/im-new"
+                className='group inline-flex items-center gap-3 px-8 py-4 bg-[#006CFF] hover:bg-[#0055cc] text-white font-bold rounded-md shadow-lg shadow-blue-500/20 transition-all duration-300'
+              >
+                I&apos;m New Here
+                <BsArrowRight className='text-lg transition-transform duration-300 group-hover:translate-x-1' />
+              </a>
+              <a
+                href="https://www.youtube.com/@ThecitizensplaceTV"
+                target="_blank"
+                rel="noopener noreferrer"
+                className='inline-flex items-center gap-3 px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white font-bold rounded-md backdrop-blur-md transition-all duration-300'
+              >
+                <BsYoutube className='text-lg text-red-400' />
+                Watch Online
+              </a>
+            </motion.div>
           </motion.div>
+
+          {/* Scroll cue — animated pulse line */}
+          {/* <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.4, duration: 0.8 }}
+            className='absolute bottom-10 left-6 sm:left-12 lg:left-20 flex flex-col items-center gap-2'
+          >
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+              className='w-px h-14 bg-gradient-to-b from-[#006CFF] to-transparent'
+            />
+          </motion.div> */}
+        </div>
+
+        {/* RIGHT IMAGE PANE — diagonal clip, desktop only */}
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeInRight}
+          className='hidden lg:block absolute right-0 top-0 bottom-0 w-[48%] overflow-hidden'
+          style={{ clipPath: "polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
+        >
+          <motion.div style={{ y: imageY }} className='absolute inset-0 scale-110'>
+            <Image
+              src='/sings-citizens.jpg'
+              alt='The Citizen Church Hero'
+              fill
+              className='object-cover object-[10%_15%]'
+              priority
+            />
+          </motion.div>
+          {/* Vignette toward diagonal cut */}
+          <div className='absolute inset-0 bg-gradient-to-r from-[#0A0D11]/60 via-transparent to-transparent' />
+          {/* Bottom fade */}
+          <div className='absolute inset-0 bg-gradient-to-t from-[#0A0D11]/40 via-transparent to-transparent' />
+          {/* Top fade — so nav text reads clearly over the image */}
+          <div className='absolute inset-0 bg-gradient-to-b from-[#0A0D11]/70 via-transparent to-transparent' />
+          {/* Right edge fade — cleans up behind the nav CTA */}
+          <div className='absolute inset-0 bg-gradient-to-l from-[#0A0D11]/50 via-transparent to-transparent' />
+          {/* Blue accent line on the cut edge */}
+          <div className='absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-[#006CFF]/70 to-transparent' />
+          {/* Vertical editorial label */}
+          <div className='absolute right-6 top-1/2 -translate-y-1/2 flex flex-col items-center gap-3'>
+            <span className='block w-px h-12 bg-white/20' />
+            <span
+              className='text-white/30 text-[10px] font-black uppercase tracking-[0.3em]'
+              style={{ writingMode: "vertical-rl" }}
+            >
+              The Citizens Place &middot; Washington DC
+            </span>
+            <span className='block w-px h-12 bg-white/20' />
+          </div>
         </motion.div>
+
+        {/* MOBILE BACKGROUND (< lg) */}
+        <div className='lg:hidden absolute inset-0 z-0'>
+          <Image
+            src='/sings-citizens.jpg'
+            alt='Pastors Yinka and Nike Oladeru'
+            fill
+            className='object-cover object-top'
+            priority
+          />
+          <div className='absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-[#0A0D11]' />
+        </div>
+
+        {/* Grain texture overlay — CSS only, no extra deps */}
+        <div
+          className='absolute inset-0 z-10 pointer-events-none opacity-[0.03]'
+          style={{
+            backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")",
+            backgroundSize: "128px 128px",
+          }}
+        />
       </div>
+
       {/* Other Sections */}
       <div className='bg-[#0A0D11] py-12 sm:py-20 min-h-[400px] h-auto relative'>
-        <div className=''>
-          <div className="absolute top-[-40px] sm:top-[-50px] w-full max-w-2xl sm:max-w-3xl left-0 sm:left-1/2 translate-x-0 sm:-translate-x-1/2 flex flex-col justify-center text-center items-center bg-[url('/top-qoute-text.svg')] bg-no-repeat bg-cover bg-center z-20">
+        {/* <div className=''>
+          <div className="absolute top-[-40px] sm:top-[-50px] w-full max-w-2xl sm:max-w-3xl left-0 sm:left-1/2 translate-x-0 sm:-translate-x-1/2 flex flex-col justify-center text-center items-center bg-[url('/top-qoute-text.svg')] bg-no-repeat bg-cover bg-center z-20"> */}
             {/* <div className='absolute bg-black rounded-[61px] top-[-50px] w-full max-w-2xl sm:max-w-3xl left-1/2 -translate-x-1/2 flex flex-col p-6 sm:p-20 justify-center text-center items-center'></div> */}
             {/* <div className='absolute -top-[0px] left-[20px] sm:left-[50px] w-[80px] sm:w-[120px] h-[60px] sm:h-[100px] bg-black rounded-b-full'></div>
           <div className='absolute -top-[0px] left-[80px] sm:left-[120px] w-[80px] sm:w-[120px] h-[60px] sm:h-[100px] bg-white rounded-l-full'></div>
@@ -121,13 +188,13 @@ export default function Home() {
           <h2 className='relative z-25 text-black font-bold text-xl sm:text-3xl max-w-3xl'>
             Philippians 3:20
           </h2> */}
-            <Image
+            {/* <Image
               src='/top-qoute.svg'
               alt='Quotation background'
               width={800}
               height={200}
               className='object-contain w-full h-auto invisible'
-            />
+            /> */}
             {/* <div className="z-20">
             <p className='relative z-25 text-black text-lg sm:text-2xl max-w-3xl pt-[40px] sm:pt-[80px]'>
               At the Citizens Place Church, our mandate is to connect people back to God, help believers grow in Christ, and build a family of faith that replicates heaven here on earth.
@@ -136,8 +203,8 @@ export default function Home() {
               Philippians 3:20
             </h2>
           </div> */}
-          </div>
-        </div>
+          {/* </div>
+        </div> */}
         {/* Left Blur */}
         <div className='absolute top-0 left-0 w-[200px] sm:w-[500px] h-[200px] sm:h-[500px] bg-[#006CFF]/10 rounded-full blur-[80px] sm:blur-[200px]' />
         {/* Right Blur */}
