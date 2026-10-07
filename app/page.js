@@ -547,7 +547,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── PRAYER REQUEST SECTION ── */}
+      {/* ── ATMOSPHERE STRIP 2 ── */}
+      {/* <div className='relative w-full h-[50vh] overflow-hidden'>
+        <Image
+          src='/nikeandmember.jpg'
+          alt='The Citizens Place Church community'
+          fill
+          className='object-cover object-center'
+        />
+        <div className='absolute inset-0 bg-gradient-to-b from-[#0A0D11] via-transparent to-[#00153D]' />
+        <div className='absolute inset-0 bg-[#0A0D11]/20' />
+        <div className='absolute bottom-6 right-6 sm:right-10 flex items-center gap-3'>
+          <span className='block w-6 h-px bg-white/30' />
+          <span className='text-white/40 text-[10px] font-black uppercase tracking-[0.25em]'>
+            The Citizens Place · Washington DC
+          </span>
+        </div>
+      </div> */}
       <section className='relative w-full bg-[#00153D] overflow-hidden'>
         <div className='w-full h-px bg-white/8' />
 
@@ -565,11 +581,11 @@ export default function Home() {
             className='flex flex-col items-center text-center'
           >
             <div className='flex items-center gap-3 mb-10'>
-              <span className='block w-8 h-px bg-white/30' />
-              <span className='text-white/60 text-xs font-black uppercase tracking-[0.25em]'>
+              {/* <span className='block w-8 h-px bg-white/30' /> */}
+              <span className='text-white/100 text-xs font-black uppercase tracking-[0.25em]'>
                 We&apos;re here
               </span>
-              <span className='block w-8 h-px bg-white/30' />
+              {/* <span className='block w-8 h-px bg-white/30' /> */}
             </div>
 
             {/* Diamond staircase — converges to center line, opens back out */}
@@ -637,11 +653,11 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.7 }}
               className='flex items-center gap-3'
             >
-              <span className='block w-6 h-px bg-white/20' />
+              {/* <span className='block w-6 h-px bg-white/20' /> */}
               <span className='text-white/30 text-[10px] font-black uppercase tracking-[0.3em]'>
                 Cast all your anxiety on him — 1 Peter 5:7
               </span>
-              <span className='block w-6 h-px bg-white/20' />
+              {/* <span className='block w-6 h-px bg-white/20' /> */}
             </motion.div>
 
           </motion.div>
