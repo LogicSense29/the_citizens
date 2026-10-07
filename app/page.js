@@ -504,7 +504,7 @@ export default function Home() {
             >
               {/* Overline */}
               <div className='flex items-center gap-3'>
-                <span className='block w-8 h-px bg-[#1DB954]' />
+                {/* <span className='block w-8 h-px bg-[#1DB954]' /> */}
                 <span className='text-[#1DB954] text-xs font-black uppercase tracking-[0.25em]'>
                   Discography
                 </span>
@@ -571,6 +571,21 @@ export default function Home() {
         <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#006CFF]/20 rounded-full blur-[160px] pointer-events-none' />
         {/* Subtle top edge fade from previous section */}
         <div className='absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0A0D11]/60 to-transparent pointer-events-none' />
+
+        {/* Atmospheric watermark — HOPE */}
+        <div className='absolute -bottom-7 sm:-bottom-20 left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-none select-none' aria-hidden='true'>
+          <span
+            className='font-black leading-none'
+            style={{
+              fontSize: 'clamp(10rem, 35vw, 32rem)',
+              WebkitTextStroke: '1px rgba(255,255,255,0.04)',
+              color: 'transparent',
+              letterSpacing: '-0.05em',
+            }}
+          >
+            HOPE
+          </span>
+        </div>
 
         <div className='container mx-auto px-6 sm:px-12 lg:px-20 py-24 sm:py-32 relative z-10'>
           <motion.div
